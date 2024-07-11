@@ -1,24 +1,21 @@
-import logo from './logo.svg';
 import './App.css';
+import './main.css';
+import TimelineView from "./views/TimelineView";
+import GithubCorner from "react-github-corner";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div>
+        <GithubCorner
+          href="https://github.com/alcibiadescleinias"
+          bannerColor="#fff"
+          octoColor="#000"
+          width={80}
+          height={80}
+          direction="right"
+        />
+        <TimelineView/>
+      </div>
   );
 }
 
