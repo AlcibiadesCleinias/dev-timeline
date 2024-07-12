@@ -45,10 +45,9 @@ export function timelineData(filters) {
             isAwarded: projectJson.awards !== null
         }
     })
-    // Order data.
-    const dataSorted = [...educationJsonFormatted, ...projectJsonFormatted].sort((a, b) => {
+
+    // Order data and return.
+    return [...educationJsonFormatted, ...projectJsonFormatted].sort((a, b) => {
         return new Date(Number(b.startTimestamp)) - new Date(Number(a.startTimestamp));
     })
-
-    return dataSorted
 }
