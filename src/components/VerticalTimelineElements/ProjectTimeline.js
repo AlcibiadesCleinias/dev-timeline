@@ -2,11 +2,13 @@ import { VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 
 import {Box, Button, Stack, styled, Tooltip} from "@mui/material";
+import { useTheme } from '@material-ui/core/styles';
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import EmojiEventsIcon from "@material-ui/icons/EmojiEvents";
 
 import {serviceNameToIcon} from "../ServiceIcons/mapping";
 import {ExternalLinkButton} from "./buttons";
+import {prizeColor, projectColor} from "../Constants/colors";
 
 const BootstrapButton = styled(Button)({
   textTransform: 'none',
@@ -17,6 +19,8 @@ const BootstrapButton = styled(Button)({
 
 function ProjectTimelineElement(props) {
     const { title, subtitle, description, date, publicUrl, moreInfoUrl, stack, additionalTags, isAwarded} = props;
+    const theme = useTheme();
+
     let buttonsHtml = null;
     if (publicUrl || moreInfoUrl) {
       buttonsHtml = (
@@ -48,8 +52,9 @@ function ProjectTimelineElement(props) {
               date={date}
               iconStyle={
             isAwarded ?
-                {background: 'rgb(255,233,0)', color: '#fff'} :
-                {background: 'rgb(33, 150, 243)', color: '#fff'}}
+                // ues theme to get the color
+                {background: prizeColor.primary, color: '#fff'} :
+                {background: projectColor.primary, color: '#fff'}}
               icon={isAwarded ? <EmojiEventsIcon/> : <DashboardIcon/>}
           >
             {additionalTagsHtml}

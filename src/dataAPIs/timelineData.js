@@ -50,6 +50,5 @@ export function timelineData(filters) {
         return new Date(Number(b.startTimestamp)) - new Date(Number(a.startTimestamp));
     })
 
-    //     Sort all data.
     return dataSorted
 }

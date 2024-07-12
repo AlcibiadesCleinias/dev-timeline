@@ -3,6 +3,7 @@ import 'react-vertical-timeline-component/style.min.css';
 
 import EducationIcon from "@material-ui/icons/School";
 import {Button} from "@mui/material";
+import {educationColor} from "../Constants/colors";
 
 
 function EducationTimelineElement(props) {
@@ -17,7 +18,7 @@ function EducationTimelineElement(props) {
         <VerticalTimelineElement
         className="vertical-timeline-element--education"
         date={date}
-        iconStyle={{background: 'rgb(233, 30, 99)', color: '#fff'}}
+        iconStyle={{background: educationColor.primary, color: '#fff'}}
         icon={<EducationIcon/>}
     >
       <h3 className="vertical-timeline-element-title">{title}</h3>
