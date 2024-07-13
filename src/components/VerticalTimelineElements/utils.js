@@ -3,6 +3,6 @@ export function formatDateToString(date) {
 }
 
 export function prettifyDescription(description) {
-  const s = description.split("\\n")[0];
+  const s = description.split("\n")[0];
   return `${s} ...`;
 }
