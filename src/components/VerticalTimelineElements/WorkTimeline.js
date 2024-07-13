@@ -3,7 +3,7 @@ import "react-vertical-timeline-component/style.min.css";
 
 import { Stack } from "@mui/material";
 
-import { ExternalLinkButton, StackIcons } from "./buttons";
+import { ExternalLinkButton, StackIcons } from "./Buttons";
 import WorkIcon from "@material-ui/icons/Work";
 import { THEME } from "../Constants/themes";
 

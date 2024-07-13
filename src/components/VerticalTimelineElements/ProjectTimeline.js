@@ -5,7 +5,7 @@ import { Stack } from "@mui/material";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import EmojiEventsIcon from "@material-ui/icons/EmojiEvents";
 
-import { ExternalLinkButton, StackIcons } from "./buttons";
+import { ExternalLinkButton, StackIcons } from "./Buttons";
 import { prizeColor } from "../Constants/colors";
 import { prettifyDescription } from "./utils";
 import { THEME } from "../Constants/themes";
