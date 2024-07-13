@@ -23,6 +23,7 @@ const BootstrapButton = styled(Button)({
 });
 
 export function StackIcons({ stack }) {
+  stack.sort();
   return (
     <Box sx={{ "& > button": { m: 0.1 } }}>
       {stack.map((tag, index) => {
