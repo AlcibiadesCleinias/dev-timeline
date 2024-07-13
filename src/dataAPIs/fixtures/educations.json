@@ -1,0 +1,74 @@
+[
+  {
+    "title": "Bachelor of Science",
+    "subtitle": "Moscow Institute of Physics and Technology (State University) (MIPT)",
+    "start": "1409603810000",
+    "end": "1535834210000",
+    "description": "Applied Mathematics and Physics, GPA 4/5"
+  },
+  {
+    "title": "Master of Science",
+    "subtitle": "Moscow Institute of Physics and Technology (State University) (MIPT)",
+    "start": "1535834210000",
+    "end": "1598992610000",
+    "description": "Applied Mathematics and Physics, GPA 5/5"
+  },
+
+  {
+    "title": "Scientific Article",
+    "subtitle": "Journal\nof Porous Media (Q2)",
+    "start": "1641043006000",
+    "end": "1672579006000",
+    "description": "Izvekov, Oleg Ya, A. V. Konyukhov, and I. A. Cheprasov. \"On Pressure Waves\nin Saturated Fractured Porous Medium with Damageable Matrix.\" Journal\nof Porous Media 26.8"
+  },
+  {
+    "title": "Scientific Article",
+    "subtitle": "Physics of Solid Earth (Q3)",
+    "start": "1567343806000",
+    "end": "1591017406000",
+    "description": "O.Y. Izvekov, A.V. Konukhov, I.A. Cheprasov. “Thermodynamically\nconsistent model of filtration in a double porosity medium with scattered\ndestruction of the matrix” // Izvestiya, Physics of Solid Earth. - 2020. No. 5.\n- p. 103-116"
+  },
+
+  {
+    "title": "Conference Speaker",
+    "subtitle": "The EGU General Assembly (Austria, Vienna, 2019)",
+    "start": "1546300800000",
+    "description": "I.A. Cheprasov, O.Y. Izvekov. Effect of overpressure in dual porous media on well productivity"
+  },
+  {
+    "title": "Conference Speaker",
+    "subtitle": "XXXIV International Conference on Interaction of Intense Energy Fluxes with Matter (Russia, 2019)",
+    "start": "1546300800000",
+    "description": "I.A. Cheprasov, O.Y. Izvekov. Effect of overpressure in dual porous media on well productivity"
+  },
+  {
+    "title": "Winner Diploma",
+    "subtitle": "The 62th Scientific conference at MIPT (Russia, 2019)",
+    "start": "1546300800000",
+    "description": "I.A. Cheprasov, O.Y. Izvekov, A.V. Konyukhov. Modeling capillary nonequilibrium in composite porous media with contrasting capillary properties"
+  },
+  {
+    "title": "Conference Speaker",
+    "subtitle": "The 61th Scientific conference at MIPT (Russia, 2018)",
+    "start": "1514764800000",
+    "description": "I.A. Cheprasov, E.E. Son. Multicomponent diffusion in hypersonic reactive flows"
+  },
+  {
+    "title": "Winner Diploma",
+    "subtitle": "The 61th Scientific conference at MIPT (Russia, 2018)",
+    "start": "1514764800000",
+    "description": "I.A. Cheprasov, O.Y. Izvekov. Simulation of overpressure in a double porous media with elastic fractured skeleton"
+  },
+  {
+    "title": "Conference Speaker",
+    "subtitle": "The 61th Scientific conference at MIPT (Russia, 2018)",
+    "start": "1514764800000",
+    "description": "A.A. Kozhemyachenko, I.A. Cheprasov, A.V. Favorskaya. Calculation of influence of sleeper on railway destruction"
+  },
+  {
+    "title": "Conference Speaker",
+    "subtitle": "The 60th Scientific conference at MIPT (Russia, 2017)",
+    "start": "1483228800000",
+    "description": "I.A. Cheprasov, V.P. Konovalov. Dissociation behind a hypersonic shock wave"
+  }
+]
