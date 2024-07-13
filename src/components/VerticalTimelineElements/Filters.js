@@ -1,4 +1,4 @@
-import {Box, Fab} from "@mui/material";
+import {Box, Fab, ThemeProvider} from "@mui/material";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import EducationIcon from "@material-ui/icons/School";
 import {educationColor, prizeColor, projectColor, workColor} from "../Constants/colors";
@@ -16,16 +16,16 @@ export function FloatingFilters({switchProjects, switchEducations, switchPrizes,
         flexDirection: 'column',
         gap: 2,
       }}
-    >   <Fab color="primary" aria-label="Works" style={{background: showWorks ? workColor.primary: workColor.dimmed, color: '#fff'}} onClick={switchWorks}>
+    >   <Fab color="success" aria-label="Works" style={{background: showWorks? null : workColor.dimmed}} onClick={switchWorks}>
         <WorkIcon />
       </Fab>
-      <Fab color="primary" aria-label="Prized Projects" style={{background: showPrizes ? prizeColor.primary: prizeColor.dimmed, color: '#fff'}} onClick={switchPrizes}>
+      <Fab color="warning" aria-label="Prized Projects" style={{background: showPrizes? null : prizeColor.dimmed}} onClick={switchPrizes}>
         <EmojiEventsIcon />
       </Fab>
-      <Fab aria-label="Projects" style={{background: showProjects? projectColor.primary : projectColor.dimmed, color: '#fff'}} onClick={switchProjects} >
+      <Fab color="info" aria-label="Projects" style={{background: showProjects? null : projectColor.dimmed}} onClick={switchProjects}>
         <DashboardIcon />
       </Fab>
-      <Fab aria-label="Education" style={{background: showEducations? educationColor.primary : educationColor.dimmed, color: '#fff'}} onClick={switchEducations}>
+      <Fab color="error" aria-label="Education" style={{background: showEducations? null : educationColor.dimmed}} onClick={switchEducations}>
         <EducationIcon />
       </Fab>
     </Box>

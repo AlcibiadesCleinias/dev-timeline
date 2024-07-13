@@ -10,7 +10,7 @@ import {
  FoundryBookIcon,
  GithubIcon, GitlabIcon,
  GrafanaIcon,
- HardhatIcon, IOSAppIcon,
+ HardhatIcon, InfluxDBIcon, IOSAppIcon,
  JavaScriptIcon,
  KubernetesIcon,
  NginxIcon,
@@ -31,6 +31,7 @@ import {
 export const serviceNameToIcon = {
     'Bitbucket Pipelines': <BitbucketIcon/>,
  'Blockchain Indexer': <BLockchainIcon/>,
+ 'The Graph': <BLockchainIcon/>,
  'C': 'C',
  'Celery': <CeleryIcon/>,
  'DataDog': <DatadogIcon/>,
@@ -57,8 +58,10 @@ export const serviceNameToIcon = {
  'Redis': <RedisIcon/>,
  'Rust Smart Contract': <RustIcon/>,
  'Solidity Smart Contract': <SolidityIcon/>,
+ 'Solidity': <SolidityIcon/>,
  'TelegramBot': <TelegramIcon/>,
  'Truffle': 'Truffle',
  'TypeScript': <TypescriptIcon/>,
  'iOS App': <IOSAppIcon/>,
+ "InfluxDB": <InfluxDBIcon/>
 }
