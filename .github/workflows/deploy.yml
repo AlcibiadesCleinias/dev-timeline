@@ -35,7 +35,7 @@ jobs:
         WORKS_JSON: ${{ secrets.WORKS_JSON }}
 
     - name: Build the project
-      run: pnpm run build
+      run: CI=false && pnpm run build
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
