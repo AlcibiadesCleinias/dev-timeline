@@ -70,6 +70,8 @@ function TimelineView() {
           >
             Notion Database
           </Link>
+          <br/>
+          Other information from the CV
         </p>
       </div>
 

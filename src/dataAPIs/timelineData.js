@@ -10,16 +10,16 @@ function removeEmojis(string) {
 // Serialize to timeline format.
 export function timelineData() {
   // Format Education data.
-  const educationJsonFormatted = EducationJson.map((education) => {
-    const start = new Date(Number(education.start));
-    const end = new Date(Number(education.end));
+  const educationJsonFormatted = EducationJson.map((entity) => {
+    const start = new Date(Number(entity.start));
+    const end = entity.end ? new Date(Number(entity.end)) : null;
     return {
       dataType: "education",
-      title: education.title,
-      subtitle: education.subtitle,
-      description: education.description,
-      date: `${formatDateToString(start)} - ${formatDateToString(end)}`,
-      url: education.url,
+      title: entity.title,
+      subtitle: entity.subtitle,
+      description: entity.description,
+      date: end ? `${formatDateToString(start)} - ${formatDateToString(end)}` : `${formatDateToString(start)}`,
+      url: entity.url,
       startTimestamp: start.getTime(),
     };
   });
