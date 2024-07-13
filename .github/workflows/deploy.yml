@@ -1,0 +1,40 @@
+
+name: Deploy to GitHub Pages
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Install dependencies
+      run: pnpm install
+
+    - name: Substitute JSON files from GitHub Secrets
+      run: |
+        echo "$EDUCATIONS_JSON" > src/dataAPIs/fixtures/educations.json
+        echo "$PROJECTS_JSON" > src/dataAPIs/fixtures/projects.json
+        echo "$WORKS_JSON" > src/dataAPIs/fixtures/works.json
+      env:
+        EDUCATIONS_JSON: ${{ secrets.EDUCATIONS_JSON }}
+        PROJECTS_JSON: ${{ secrets.PROJECTS_JSON }}
+        WORKS_JSON: ${{ secrets.WORKS_JSON }}
+
+    - name: Build the project
+      run: pnpm run build
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./build
+
