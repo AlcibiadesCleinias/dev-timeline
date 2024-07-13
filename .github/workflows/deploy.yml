@@ -11,16 +11,12 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Set up Node.js and install pnpm
-      run: |
-        curl -fsSL https://get.pnpm.io/install.sh | sh -
-      env:
-        PNPM_HOME: ${{ runner.tool_cache }}/pnpm
-      shell: bash
+    - uses: pnpm/action-setup@v4
+      with:
+        version: 8
 
     - name: Install dependencies
       run: pnpm install
-      shell: bash
 
     - name: Substitute JSON files from GitHub Secrets
       run: |
@@ -31,11 +27,9 @@ jobs:
         EDUCATIONS_JSON: ${{ secrets.EDUCATIONS_JSON }}
         PROJECTS_JSON: ${{ secrets.PROJECTS_JSON }}
         WORKS_JSON: ${{ secrets.WORKS_JSON }}
-      shell: bash
 
     - name: Build the project
       run: pnpm run build
-      shell: bash
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
