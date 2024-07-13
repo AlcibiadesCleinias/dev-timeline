@@ -1,7 +1,7 @@
 {
   "name": "my-portfolio",
   "version": "0.1.0",
-  "homepage": "https://dev-timeline.why-nft.com",
+  "homepage": "https://AlcibiadesCleinias.github.io/dev-timeline",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.4",
@@ -44,5 +44,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
   }
 }
