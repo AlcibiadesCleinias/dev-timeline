@@ -1,0 +1,568 @@
+[
+  {
+    "title": "AI Video Insight Chrome Extension",
+    "subtitle": null,
+    "start": "1719957600000",
+    "description": "Extension for Video Summary, Clickbait Rating, TL;DR of Comments. Project built according to the provided technical task for 10 hours (check readme)",
+    "stack": [
+      "Docker",
+      "FastAPI",
+      "JavaScript",
+      "Python"
+    ],
+    "additionalTags": [
+      "ChromeExtension",
+      "Openai",
+      "Withdocs"
+    ],
+    "publicUrl": null,
+    "moreInfoUrl": "https://www.notion.so/why-nft/36420a38619747d0943074f9139224f2",
+    "awards": null
+  },
+  {
+    "title": "Unstoppable Models",
+    "subtitle": null,
+    "start": "1717279200000",
+    "description": "[ETHPrague Hackathon] A public ML model training initiative (as a public good) where anyone can freely submit the next weight update for the model on public dataset according to DAO controllable algorithm\n\nMore: https://devfolio.co/projects/unstoppable-models-94c1",
+    "stack": [
+      "Blockchain Indexer",
+      "Docker",
+      "Foundry",
+      "Python",
+      "Solidity Smart Contract"
+    ],
+    "additionalTags": [
+      "Withdocs",
+      "\ud83d\ude00ResearchCode\ud83d\ude00"
+    ],
+    "publicUrl": "https://unstoppable-models.streamlit.app/",
+    "moreInfoUrl": "https://www.notion.so/why-nft/Unstoppable-Models-56d918c5110f4ba98c928ed27a055ea5",
+    "awards": "\ud83e\udd47 on Hackathon"
+  },
+  {
+    "title": "First atomic bridge-less cross-chain assets swap",
+    "subtitle": null,
+    "start": "1711922400000",
+    "description": "[ETHDam Hackathon] Presentation: https://github.com/sergmiller/secured-jamon/blob/main/0xSecuredJamon.pdf\n\nDemo: https://youtu.be/F6HxKk2WAm0\nHackathon: https://taikai.network/cryptocanal/hackathons/ethdam2024/projects/cluwteuny00i4z3014wzzu4pi/idea",
+    "stack": [
+      "ReactApp",
+      "Rust Smart Contract"
+    ],
+    "additionalTags": [
+      "Hackathon",
+      "MpcProtocol",
+      "Withdocs",
+      "\ud83d\ude00ResearchCode\ud83d\ude00"
+    ],
+    "publicUrl": "https://jamon-swap.why-nft.com/",
+    "moreInfoUrl": "https://www.notion.so/why-nft/First-atomic-bridge-less-cross-chain-assets-swap-8fd4cd54a2594276a3f0c0943dda6cb6",
+    "awards": "\ud83e\udd49 on Hackathon"
+  },
+  {
+    "title": "Cloudless Computer Resources Market Explorer",
+    "subtitle": null,
+    "start": "1706655600000",
+    "description": "Web application to show the current market of Offers, Provider, Deals, CC.\nThe main client of the application is a Provider.",
+    "stack": [
+      "Blockchain Indexer",
+      "Docker",
+      "Foundry",
+      "Github Actions",
+      "ReactApp",
+      "Solidity Smart Contract",
+      "TypeScript"
+    ],
+    "additionalTags": [
+      "IndustrialProject",
+      "WithAdminPanel",
+      "Withdocs"
+    ],
+    "publicUrl": "https://explorer.kras.fluence.dev/",
+    "moreInfoUrl": "https://www.notion.so/why-nft/Cloudless-Computer-Resources-Market-Explorer-df59e25b60ee44929ad1ca7a973b7919",
+    "awards": null
+  },
+  {
+    "title": "Fluence Dao & Token Contract, DevDistribution",
+    "subtitle": null,
+    "start": "1706569200000",
+    "description": "DAO & deploy docs: https://github.com/fluencelabs/dao/tree/main/contracts#dao-proposal-flow",
+    "stack": [
+      "Hardhat",
+      "Solidity Smart Contract",
+      "TypeScript"
+    ],
+    "additionalTags": [
+      "IndustrialProject",
+      "Withdocs"
+    ],
+    "publicUrl": "https://dao-fluence.vercel.app/",
+    "moreInfoUrl": "https://www.notion.so/why-nft/Fluence-Dao-Token-Contract-DevDistribution-21c999156053405f9867f211030148af",
+    "awards": null
+  },
+  {
+    "title": "Smart Contract on Hardhat Boilerplate",
+    "subtitle": null,
+    "start": "1696111200000",
+    "description": "This repository contains a sample project that you can use as the starting point for your Ethereum project",
+    "stack": [
+      "Github Actions",
+      "Hardhat",
+      "Solidity Smart Contract"
+    ],
+    "additionalTags": [
+      "Template"
+    ],
+    "publicUrl": null,
+    "moreInfoUrl": "https://www.notion.so/why-nft/Smart-Contract-on-Hardhat-Boilerplate-bae985c9f1594821a748d5239894bc6c",
+    "awards": null
+  },
+  {
+    "title": "11 AI - Help Based on Internal Data",
+    "subtitle": null,
+    "start": "1696111200000",
+    "description": "[Junction Hackathon] AI with LLM as\nservice to aid managers in handling complicated technical and economic\nissues through a chat. Processing real-time awareness, sustainability,\nscalability, and seamless integration with a wide array of data sources (ref to Junction Hackathon). Presentation: https://github.com/sergmiller/junction2023/blob/master/docs/11AIJunction2023_Final.pptx",
+    "stack": [
+      "Django",
+      "Docker",
+      "ML",
+      "ReactApp"
+    ],
+    "additionalTags": [
+      "Ai",
+      "Hackathon",
+      "Llm",
+      "Withdocs",
+      "\ud83d\ude00ResearchCode\ud83d\ude00"
+    ],
+    "publicUrl": null,
+    "moreInfoUrl": "https://www.notion.so/why-nft/11-AI-Help-Based-on-Internal-Data-641e74fcea004ff4bad6f736d60bc5a0",
+    "awards": null
+  },
+  {
+    "title": "On-chain data labelling with Zk-proofed user",
+    "subtitle": null,
+    "start": "1682892000000",
+    "description": "[ETHGlobal Hackathon] Distributed datasets labeling with strong identity verification. More: https://ethglobal.com/showcase/zkturk-h9a6p",
+    "stack": [
+      "Github Actions",
+      "JavaScript",
+      "Solidity Smart Contract"
+    ],
+    "additionalTags": [
+      "Hackathon",
+      "WorldidApi",
+      "\ud83d\ude00ResearchCode\ud83d\ude00"
+    ],
+    "publicUrl": "https://zkturk.why-nft.com/",
+    "moreInfoUrl": "https://www.notion.so/why-nft/On-chain-data-labelling-with-Zk-proofed-user-c80c3c5054a444688c36cf9d8d5843f6",
+    "awards": "2 prices on Hackathon"
+  },
+  {
+    "title": "TelegramBot with OpenAI",
+    "subtitle": null,
+    "start": "1677711600000",
+    "description": "Bot features depends on the different telegram actors. More: https://github.com/AlcibiadesCleinias/telegram-phd-bot?tab=readme-ov-file#feature",
+    "stack": [
+      "Docker",
+      "Redis",
+      "TelegramBot"
+    ],
+    "additionalTags": [
+      "ImageGeneration",
+      "Openai",
+      "Telegrambot"
+    ],
+    "publicUrl": "https://t.me/MiptPhDBot",
+    "moreInfoUrl": "https://www.notion.so/why-nft/TelegramBot-with-OpenAI-6023a6c7beb54fef83438508b544f3bf",
+    "awards": null
+  },
+  {
+    "title": "Pi Server SDK Connector",
+    "subtitle": null,
+    "start": "1675206000000",
+    "description": "This connector allows access to the OSISoft PI System through their proprietary SDK",
+    "stack": [
+      "C",
+      "Python"
+    ],
+    "additionalTags": [
+      "Library",
+      "Co-Author"
+    ],
+    "publicUrl": "https://piconnect.readthedocs.io/en/develop/",
+    "moreInfoUrl": "https://www.notion.so/why-nft/Pi-Server-SDK-Connector-4e9a182ab7c74146b68df4d70342066a",
+    "awards": "Github Stars"
+  },
+  {
+    "title": "Telegram Avatar Carousel",
+    "subtitle": null,
+    "start": "1668034800000",
+    "description": "Rotate images of your profile in Telegram App",
+    "stack": [
+      "Docker",
+      "Python"
+    ],
+    "additionalTags": [
+      "Withdocs"
+    ],
+    "publicUrl": null,
+    "moreInfoUrl": "https://www.notion.so/why-nft/Telegram-Avatar-Carousel-1738009f30d14ad8aee347323216a057",
+    "awards": null
+  },
+  {
+    "title": "Django with separate Celery Stack Design",
+    "subtitle": null,
+    "start": "1653602400000",
+    "description": "In this repo there is a draft view on how we could divide ML (on python) and api/business logic (Django, Celery Beat) with help of Celery and Redis as a task broker and tmp result storing.",
+    "stack": [
+      "Celery",
+      "Django",
+      "PostgreSQL",
+      "Redis"
+    ],
+    "additionalTags": [
+      "ResearchCode",
+      "Template",
+      "Withdocs"
+    ],
+    "publicUrl": null,
+    "moreInfoUrl": "https://www.notion.so/why-nft/Django-with-separate-Celery-Stack-Design-971bafd758b04978ba2599cf39d3a2b8",
+    "awards": null
+  },
+  {
+    "title": "Release workflow of Upgradable Smart Contract Applications (SuperDao)",
+    "subtitle": null,
+    "start": "1648764000000",
+    "description": "Designed, developed and integrated CI&CD pipeline that consists of 1\nbutton to make upgradable solidity contracts to be released on di!erent\nchains finally",
+    "stack": [
+      "Gitlab CI&CD",
+      "Hardhat",
+      "Solidity Smart Contract",
+      "TypeScript"
+    ],
+    "additionalTags": [
+      "IndustrialProject",
+      "UpgradableSmartContracts",
+      "DesignWorkflow"
+    ],
+    "publicUrl": null,
+    "moreInfoUrl": "https://www.notion.so/why-nft/Release-workflow-of-Upgradable-Smart-Contract-Applications-SuperDao-b4bc319d25da44258697576c0dd873d9",
+    "awards": null
+  },
+  {
+    "title": "Cross Chain NFT transfer",
+    "subtitle": null,
+    "start": "1643670000000",
+    "description": "[Blockchain Hackathon]",
+    "stack": [
+      "Fluence Oracles",
+      "JavaScript",
+      "Solidity Smart Contract"
+    ],
+    "additionalTags": [
+      "Hackathon",
+      "\ud83d\ude00ResearchCode\ud83d\ude00"
+    ],
+    "publicUrl": null,
+    "moreInfoUrl": "https://www.notion.so/why-nft/Cross-Chain-NFT-transfer-00190475405e423096b7265b3bbcc84c",
+    "awards": "\ud83e\udd48 on Hackathon"
+  },
+  {
+    "title": "Learn: Crypto Zombie App",
+    "subtitle": null,
+    "start": "1643238000000",
+    "description": "The project was composed according to cryptoZombie solidity course",
+    "stack": [
+      "Docker",
+      "Solidity Smart Contract",
+      "Truffle"
+    ],
+    "additionalTags": [
+      "ChainlinkOracles",
+      "LearnCourse",
+      "Withdocs"
+    ],
+    "publicUrl": "https://alcibiadescleinias.github.io/crypto-zombies-project/frontend/index.html",
+    "moreInfoUrl": "https://www.notion.so/why-nft/Learn-Crypto-Zombie-App-694074f0e01f41cf9f7d0f90084a4119",
+    "awards": null
+  },
+  {
+    "title": "NFT Gift Button",
+    "subtitle": null,
+    "start": "1638313200000",
+    "description": "Trustless backend with market-agnostic sending schema to send an NFT gift\n\nProposal: https://forum.rari.foundation/t/nft-gift-button-grant-proposal/263\n\nDemo: https://nft-gift-button.polygon.why-nft.com/",
+    "stack": [
+      "Django",
+      "Docker",
+      "FastAPI",
+      "Solidity Smart Contract",
+      "Truffle"
+    ],
+    "additionalTags": [
+      "FulfilledGrant"
+    ],
+    "publicUrl": "https://www.notion.so/664740a567c54b56bb3bac7de0a33db1?pvs=21",
+    "moreInfoUrl": "https://www.notion.so/why-nft/NFT-Gift-Button-7de5c834d3ce4ad189bf506ebeeabf75",
+    "awards": "Approved Grant"
+  },
+  {
+    "title": "TelegramBot: Historical Images Scrapper",
+    "subtitle": null,
+    "start": "1637967600000",
+    "description": "The telegram chatbot that periodically gives\u00a0statistics\u00a0on posted via\u00a0tg @like bot messages & finds image duplication",
+    "stack": [
+      "FastAPI",
+      "Redis",
+      "TelegramBot"
+    ],
+    "additionalTags": [
+      "Telegrambot",
+      "Template",
+      "Withdocs"
+    ],
+    "publicUrl": null,
+    "moreInfoUrl": "https://www.notion.so/why-nft/TelegramBot-Historical-Images-Scrapper-4d17fd86ac8d4ffd86f17dca412ea4aa",
+    "awards": null
+  },
+  {
+    "title": "News Driving Trading",
+    "subtitle": null,
+    "start": "1630879200000",
+    "description": "[Definition Hackathon] News driving trading inside Discord via Chatex API.",
+    "stack": [
+      "Celery",
+      "Django",
+      "Docker",
+      "FastAPI",
+      "Node.js",
+      "PostgreSQL",
+      "Redis"
+    ],
+    "additionalTags": [
+      "Chatexapi"
+    ],
+    "publicUrl": null,
+    "moreInfoUrl": "https://www.notion.so/why-nft/News-Driving-Trading-e84d92c833a841188fa02285d8888488",
+    "awards": null
+  },
+  {
+    "title": "NFT Gift Onboarding Service (transfer protocol)",
+    "subtitle": null,
+    "start": "1630447200000",
+    "description": "[Definition Hackathon] Developed erc721 transfer protocol",
+    "stack": [
+      "Django",
+      "Docker",
+      "Github Actions",
+      "Node.js",
+      "PostgreSQL"
+    ],
+    "additionalTags": [
+      "Hackathon",
+      "\ud83d\ude00ResearchCode\ud83d\ude00"
+    ],
+    "publicUrl": null,
+    "moreInfoUrl": "https://www.notion.so/why-nft/NFT-Gift-Onboarding-Service-transfer-protocol-a1c51a8c6d9541faa3aab9391bf28640",
+    "awards": "\ud83e\udd49 on Hackathon"
+  },
+  {
+    "title": "NaFThalene",
+    "subtitle": null,
+    "start": "1622498400000",
+    "description": "[Definition Hackathon] Create NFT without a commission from Dribbble and Instagram. E.g. via simple\nweb option\n\nWeb demo: https://why-nft.com/",
+    "stack": [
+      "Django",
+      "Docker",
+      "Github Actions",
+      "Nginx",
+      "Node.js",
+      "PostgreSQL",
+      "ReactApp",
+      "iOS App"
+    ],
+    "additionalTags": [
+      "Hackathon",
+      "\ud83d\ude00ResearchCode\ud83d\ude00"
+    ],
+    "publicUrl": "https://apps.apple.com/mn/app/nafthalene/id1572170903",
+    "moreInfoUrl": "https://www.notion.so/why-nft/NaFThalene-1da7534a28ae4489aa7ee331f1213567",
+    "awards": "\ud83e\udd48 on Hackathon"
+  },
+  {
+    "title": "Django in Docker with Tests Template",
+    "subtitle": null,
+    "start": "1622066400000",
+    "description": "Dockerizing Django with Postgres, Gunicorn, and Nginx",
+    "stack": [
+      "Django",
+      "Docker",
+      "Github Actions",
+      "PostgreSQL"
+    ],
+    "additionalTags": [
+      "Template"
+    ],
+    "publicUrl": null,
+    "moreInfoUrl": "https://www.notion.so/why-nft/Django-in-Docker-with-Tests-Template-9f295997014d437c8208b8046e949160",
+    "awards": null
+  },
+  {
+    "title": "Django Simple IO Background Worker",
+    "subtitle": null,
+    "start": "1622066400000",
+    "description": "A simple thread worker in a Django background (demo code)",
+    "stack": [
+      "Django",
+      "Docker",
+      "Github Actions"
+    ],
+    "additionalTags": [
+      "ResearchCode",
+      "Template",
+      "Withdocs"
+    ],
+    "publicUrl": null,
+    "moreInfoUrl": "https://www.notion.so/why-nft/Django-Simple-IO-Background-Worker-435e69740e74444282c996e783eaba42",
+    "awards": null
+  },
+  {
+    "title": "Simple Crypto Currency Trade Bot",
+    "subtitle": null,
+    "start": "1622066400000",
+    "description": "This is a cryptocurrency trading bot that sells coins on a pump and buys on a dump",
+    "stack": [
+      "Docker",
+      "PostgreSQL",
+      "Python"
+    ],
+    "additionalTags": [
+      "Krakenapi",
+      "ResearchCode",
+      "Co-Author",
+      "Withdocs"
+    ],
+    "publicUrl": null,
+    "moreInfoUrl": "https://www.notion.so/why-nft/Volatobot-b71c4ffff37e4c979f6f8ae222651960",
+    "awards": null
+  },
+  {
+    "title": "Hice Parter Fullstack Web",
+    "subtitle": null,
+    "start": "1616799600000",
+    "description": "Fullstack Django application integrated into bank ecosystem to attract Parters",
+    "stack": [
+      "DataDog",
+      "Django",
+      "Docker",
+      "Github Actions",
+      "K8s",
+      "Nginx",
+      "RabbitMQ"
+    ],
+    "additionalTags": [
+      "IndustrialProject"
+    ],
+    "publicUrl": "https://partners.hicebank.ru/registration",
+    "moreInfoUrl": "https://www.notion.so/why-nft/Hice-Parter-Fullstack-Web-650292d3ddf94a95aafbe4af635949c0",
+    "awards": null
+  },
+  {
+    "title": "ML Trade Bot",
+    "subtitle": null,
+    "start": "1601503200000",
+    "description": "In a team of 4 we have created micro-service stack (11 services) that performs different\nML algorithms in trading on technical and scrapped text-news features",
+    "stack": [
+      "Celery",
+      "Django",
+      "Docker",
+      "Flask",
+      "Github Actions",
+      "Grafana",
+      "JavaScript",
+      "ML",
+      "Prometheus",
+      "Redis",
+      "TelegramBot"
+    ],
+    "additionalTags": [
+      "Bert",
+      "NewsScraper"
+    ],
+    "publicUrl": null,
+    "moreInfoUrl": "https://www.notion.so/why-nft/ML-Trade-Bot-5ee084933e5740b4809f719f74939018",
+    "awards": null
+  },
+  {
+    "title": "Casual Salon Web & Work Calendar",
+    "subtitle": null,
+    "start": "1590962400000",
+    "description": "Separate frontend for clients with data of available time slots/prices/etc.,\ninternal admin panel & schedule web to manage cabinet time/prices/etc.\nfor the frontend.\nUser-guide: https://www.notion.so/0647f50d8ac24f0eb332d50604603f0d?pvs=21",
+    "stack": [
+      "Bitbucket Pipelines",
+      "Celery",
+      "Django",
+      "Docker",
+      "Nginx",
+      "PostgreSQL",
+      "ReactApp",
+      "Redis"
+    ],
+    "additionalTags": [
+      "Calendar",
+      "HelloWorld",
+      "Template",
+      "WithAdminPanel"
+    ],
+    "publicUrl": "https://casual-salon.ru/\nhttps://maskva-salon.ru/\n\nManual & About:\nhttps://www.notion.so/0647f50d8ac24f0eb332d50604603f0d?pvs=21",
+    "moreInfoUrl": "https://www.notion.so/why-nft/Casual-Salon-Web-Work-Calendar-54cd06732b494916afa2be12371c2218",
+    "awards": null
+  },
+  {
+    "title": "Hinzu",
+    "subtitle": null,
+    "start": "1590530400000",
+    "description": "[Photohack Hackathon] Search Similar Image Through Films DB",
+    "stack": [
+      "Celery",
+      "Django",
+      "Docker",
+      "Flask",
+      "Github Actions",
+      "ML",
+      "Nginx",
+      "PostgreSQL",
+      "ReactApp",
+      "Redis"
+    ],
+    "additionalTags": [
+      "Hackathon",
+      "IndexSearchOptimizations",
+      "WithAdminPanel",
+      "\ud83d\ude00ResearchCode\ud83d\ude00"
+    ],
+    "publicUrl": "https://hinzu.ru/",
+    "moreInfoUrl": "https://www.notion.so/why-nft/Hinzu-132249593125450283f9b0e897df2dd2",
+    "awards": null
+  },
+  {
+    "title": "Parohod Fullstack Web",
+    "subtitle": null,
+    "start": "1420844400000",
+    "description": "Hello World to Django as Simple web site for a company with admin panel and performed SEO",
+    "stack": [
+      "Bitbucket Pipelines",
+      "Django",
+      "Docker",
+      "Nginx",
+      "PostgreSQL"
+    ],
+    "additionalTags": [
+      "HelloWorld",
+      "NoFrontend",
+      "WithAdminPanel"
+    ],
+    "publicUrl": "https://parohod38.ru/",
+    "moreInfoUrl": "https://www.notion.so/why-nft/Parohod-Fullstack-Web-dbd9234ac0894a74af4b66128692a686",
+    "awards": null
+  }
+]
