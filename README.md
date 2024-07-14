@@ -31,7 +31,27 @@ Demo: https://alcibiadescleinias.github.io/dev-timeline/
 
 ### Projects
 ```json
-[{"title": "AI Video Insight Chrome Extension", "subtitle": null, "start": "1719957600000", "description": "Extension for Video Summary, Clickbait Rating, TL;DR of Comments. Project built according to the provided technical task for 10 hours (check readme)", "stack": ["Docker", "FastAPI", "JavaScript", "Python"], "additionalTags": ["ChromeExtension", "Openai", "Withdocs"], "publicUrl": null, "moreInfoUrl": "https://www.notion.so/why-nft/36420a38619747d0943074f9139224f2", "awards": null}
+[
+  {
+    "title": "AI Video Insight Chrome Extension",
+    "subtitle": null,
+    "start": "1719957600000",
+    "description": "Extension for Video Summary, Clickbait Rating, TL;DR of Comments. Project built according to the provided technical task for 10 hours (check readme)",
+    "stack": [
+      "Docker",
+      "FastAPI",
+      "JavaScript",
+      "Python"
+    ],
+    "additionalTags": [
+      "ChromeExtension",
+      "Openai",
+      "Withdocs"
+    ],
+    "publicUrl": null,
+    "moreInfoUrl": "https://www.notion.so/why-nft/36420a38619747d0943074f9139224f2",
+    "awards": null
+  }
 ]
 ```
 

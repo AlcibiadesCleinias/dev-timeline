@@ -1,0 +1,41 @@
+name: AI PR Review and Comment
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  ai-review-and-comment:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt  # If you have a requirements file
+
+      - name: Run AI review
+        run: python ai_review.py > output.txt
+
+      - name: Read output.txt
+        id: read_output
+        run: |
+          CONTENT=$(cat output.txt)
+          echo "::set-output name=CONTENT::${CONTENT}"
+
+      - name: Post comment to PR
+        if: github.event_name == 'pull_request'
+        uses: peter-evans/create-or-update-comment@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue-number: ${{ github.event.pull_request.number }}
+          body: ${{ steps.read_output.outputs.CONTENT }}
