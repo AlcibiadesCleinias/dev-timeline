@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+# Dev-Timeline | Developer Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and represents simple 1 timeline portfolio.
 
-## Available Scripts
+Demo: https://alcibiadescleinias.github.io/dev-timeline/
 
-In the project directory, you can run:
+# Features
+- timeline with work and projects experiences, educations and prized projects
+- filters for all 4 components are available
 
-### `npm start`
+# Dev
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+`pnpm i`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+`pnpm run start`
 
-### `npm test`
+## Fixtures Format
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Education
+```json
+[
+  {
+    "title": "Bachelor of Science",
+    "subtitle": "Moscow Institute of Physics and Technology (State University) (MIPT)",
+    "start": "1409603810000",
+    "end": "1535834210000",
+    "description": "Applied Mathematics and Physics, GPA 4/5"
+  }
+]
+```
 
-### `npm run build`
+### Projects
+```json
+[{"title": "AI Video Insight Chrome Extension", "subtitle": null, "start": "1719957600000", "description": "Extension for Video Summary, Clickbait Rating, TL;DR of Comments. Project built according to the provided technical task for 10 hours (check readme)", "stack": ["Docker", "FastAPI", "JavaScript", "Python"], "additionalTags": ["ChromeExtension", "Openai", "Withdocs"], "publicUrl": null, "moreInfoUrl": "https://www.notion.so/why-nft/36420a38619747d0943074f9139224f2", "awards": null}
+]
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Works
+```json
+[
+  {
+    "title": "ML Engineer",
+    "subtitle": "ACRA Rating Agency",
+    "start": "1525125600000",
+    "end": "1543363200000",
+    "description": "Developed web-app to predict probability of a company default",
+    "stack": ["Flask", "ML"],
+    "additionalTags": ["Moscow"]
+  }
+]
+```

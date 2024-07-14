@@ -9,6 +9,9 @@ import {
 } from "../Constants/colors";
 import EmojiEventsIcon from "@material-ui/icons/EmojiEvents";
 import WorkIcon from "@material-ui/icons/Work";
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
+
 
 export function FloatingFilters({
   switchProjects,
@@ -20,6 +23,10 @@ export function FloatingFilters({
   showWorks,
   switchWorks,
 }) {
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up('sm'));
+  const filter_button_size = matches ? "large" : "small";
+
   return (
     <Box
       sx={{
@@ -35,6 +42,7 @@ export function FloatingFilters({
       <Fab
         color="success"
         aria-label="Works"
+        size={filter_button_size}
         style={{ background: showWorks ? null : workColor.dimmed }}
         onClick={switchWorks}
       >
@@ -43,6 +51,7 @@ export function FloatingFilters({
       <Fab
         color="warning"
         aria-label="Prized Projects"
+        size={filter_button_size}
         style={{ background: showPrizes ? null : prizeColor.dimmed }}
         onClick={switchPrizes}
       >
@@ -51,6 +60,7 @@ export function FloatingFilters({
       <Fab
         color="info"
         aria-label="Projects"
+        size={filter_button_size}
         style={{ background: showProjects ? null : projectColor.dimmed }}
         onClick={switchProjects}
       >
@@ -59,6 +69,7 @@ export function FloatingFilters({
       <Fab
         color="error"
         aria-label="Education"
+        size={filter_button_size}
         style={{ background: showEducations ? null : educationColor.dimmed }}
         onClick={switchEducations}
       >
