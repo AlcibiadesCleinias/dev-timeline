@@ -11,6 +11,7 @@ import EmojiEventsIcon from "@material-ui/icons/EmojiEvents";
 import WorkIcon from "@material-ui/icons/Work";
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
+import React from "react";
 
 
 export function FloatingFilters({
@@ -43,7 +44,7 @@ export function FloatingFilters({
         color="success"
         aria-label="Works"
         size={filter_button_size}
-        style={{ background: showWorks ? null : workColor.dimmed }}
+        sx={{ bgcolor: showWorks ? undefined : workColor.dimmed }}
         onClick={switchWorks}
       >
         <WorkIcon />
@@ -52,7 +53,7 @@ export function FloatingFilters({
         color="warning"
         aria-label="Prized Projects"
         size={filter_button_size}
-        style={{ background: showPrizes ? null : prizeColor.dimmed }}
+        sx={{ bgcolor: showPrizes ? undefined : prizeColor.dimmed }}
         onClick={switchPrizes}
       >
         <EmojiEventsIcon />
@@ -61,7 +62,7 @@ export function FloatingFilters({
         color="info"
         aria-label="Projects"
         size={filter_button_size}
-        style={{ background: showProjects ? null : projectColor.dimmed }}
+        sx={{ bgcolor: showProjects ? undefined : projectColor.dimmed }}
         onClick={switchProjects}
       >
         <DashboardIcon />
@@ -70,7 +71,7 @@ export function FloatingFilters({
         color="error"
         aria-label="Education"
         size={filter_button_size}
-        style={{ background: showEducations ? null : educationColor.dimmed }}
+        sx={{ bgcolor: showEducations ? undefined : educationColor.dimmed }}
         onClick={switchEducations}
       >
         <EducationIcon />

@@ -10,6 +10,7 @@ import { useCallback, useState } from "react";
 import { FloatingFilters } from "../components/VerticalTimelineElements/Filters";
 import WorkTimelineElement from "../components/VerticalTimelineElements/WorkTimeline";
 import VimTextBox from "../components/Vim/Vim";
+import React from "react";
 
 function TimelineView() {
   const data = timelineData();
@@ -17,26 +18,42 @@ function TimelineView() {
   const [showProjects, setShowProjects] = useState(true);
   const [showEducations, setShowEducations] = useState(true);
   const [showPrizes, setShowPrizes] = useState(true);
-  const [showWorks, setWorks] = useState(true);
+  const [showWorks, setShowWorks] = useState(true);
 
-  // const handleToggle = useCallback(() => setShow(prevShow => !prevShow),[])
-  const switchProjectsCallback = useCallback(
-    () => setShowProjects((prevShow) => !prevShow),
-    [],
-  );
-  const switchEducationsCallback = useCallback(
-    () => setShowEducations((prevShow) => !prevShow),
-    [],
-  );
-  const switchPrizesCallback = useCallback(
-    () => setShowPrizes((prevShow) => !prevShow),
-    [],
-  );
-  const switchWorksCallback = useCallback(
-    () => setWorks((prevShow) => !prevShow),
-    [],
-  );
+  const createSwitchCallback = (otherStates) => {
+    return (prevShow) => {
+      if (prevShow && otherStates.every(state => state[0])) {
+        otherStates.forEach(([_, setState]) => setState(false));
+        return true;
+      }
+      return !prevShow;
+    };
+  };
 
+  const switchProjectsCallback = React.useCallback(() => setShowProjects(createSwitchCallback([
+    [showEducations, setShowEducations],
+    [showPrizes, setShowPrizes],
+    [showWorks, setShowWorks]
+  ])), [setShowProjects, showEducations, setShowEducations, showPrizes, setShowPrizes, showWorks, setShowWorks]);
+
+  const switchEducationsCallback = React.useCallback(() => setShowEducations(createSwitchCallback([
+    [showProjects, setShowProjects],
+    [showPrizes, setShowPrizes],
+    [showWorks, setShowWorks]
+  ])), [setShowEducations, showProjects, setShowProjects, showPrizes, setShowPrizes, showWorks, setShowWorks]);
+
+  const switchPrizesCallback = React.useCallback(() => setShowPrizes(createSwitchCallback([
+    [showProjects, setShowProjects],
+    [showEducations, setShowEducations],
+    [showWorks, setShowWorks]
+  ])), [setShowPrizes, showProjects, setShowProjects, showEducations, setShowEducations, showWorks, setShowWorks]);
+
+  const switchWorksCallback = React.useCallback(() => setShowWorks(createSwitchCallback([
+    [showProjects, setShowProjects],
+    [showEducations, setShowEducations],
+    [showPrizes, setShowPrizes]
+  ])), [setShowWorks, showProjects, setShowProjects, showEducations, setShowEducations, showPrizes, setShowPrizes]);  
+  
   const timelineDataHtml = data.map((timelineElement, index) => {
     if (timelineElement.dataType === "education") {
       return <EducationTimelineElement key={index} {...timelineElement} />;
