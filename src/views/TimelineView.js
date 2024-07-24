@@ -22,7 +22,7 @@ function TimelineView() {
 
   const createSwitchCallback = (otherStates) => {
     return (prevShow) => {
-      if (prevShow && otherStates.every(state => state[0])) {
+      if (prevShow && otherStates.every((state) => state[0])) {
         otherStates.forEach(([_, setState]) => setState(false));
         return true;
       }
@@ -30,30 +30,86 @@ function TimelineView() {
     };
   };
 
-  const switchProjectsCallback = React.useCallback(() => setShowProjects(createSwitchCallback([
-    [showEducations, setShowEducations],
-    [showPrizes, setShowPrizes],
-    [showWorks, setShowWorks]
-  ])), [setShowProjects, showEducations, setShowEducations, showPrizes, setShowPrizes, showWorks, setShowWorks]);
+  const switchProjectsCallback = React.useCallback(
+    () =>
+      setShowProjects(
+        createSwitchCallback([
+          [showEducations, setShowEducations],
+          [showPrizes, setShowPrizes],
+          [showWorks, setShowWorks],
+        ]),
+      ),
+    [
+      setShowProjects,
+      showEducations,
+      setShowEducations,
+      showPrizes,
+      setShowPrizes,
+      showWorks,
+      setShowWorks,
+    ],
+  );
 
-  const switchEducationsCallback = React.useCallback(() => setShowEducations(createSwitchCallback([
-    [showProjects, setShowProjects],
-    [showPrizes, setShowPrizes],
-    [showWorks, setShowWorks]
-  ])), [setShowEducations, showProjects, setShowProjects, showPrizes, setShowPrizes, showWorks, setShowWorks]);
+  const switchEducationsCallback = React.useCallback(
+    () =>
+      setShowEducations(
+        createSwitchCallback([
+          [showProjects, setShowProjects],
+          [showPrizes, setShowPrizes],
+          [showWorks, setShowWorks],
+        ]),
+      ),
+    [
+      setShowEducations,
+      showProjects,
+      setShowProjects,
+      showPrizes,
+      setShowPrizes,
+      showWorks,
+      setShowWorks,
+    ],
+  );
 
-  const switchPrizesCallback = React.useCallback(() => setShowPrizes(createSwitchCallback([
-    [showProjects, setShowProjects],
-    [showEducations, setShowEducations],
-    [showWorks, setShowWorks]
-  ])), [setShowPrizes, showProjects, setShowProjects, showEducations, setShowEducations, showWorks, setShowWorks]);
+  const switchPrizesCallback = React.useCallback(
+    () =>
+      setShowPrizes(
+        createSwitchCallback([
+          [showProjects, setShowProjects],
+          [showEducations, setShowEducations],
+          [showWorks, setShowWorks],
+        ]),
+      ),
+    [
+      setShowPrizes,
+      showProjects,
+      setShowProjects,
+      showEducations,
+      setShowEducations,
+      showWorks,
+      setShowWorks,
+    ],
+  );
 
-  const switchWorksCallback = React.useCallback(() => setShowWorks(createSwitchCallback([
-    [showProjects, setShowProjects],
-    [showEducations, setShowEducations],
-    [showPrizes, setShowPrizes]
-  ])), [setShowWorks, showProjects, setShowProjects, showEducations, setShowEducations, showPrizes, setShowPrizes]);  
-  
+  const switchWorksCallback = React.useCallback(
+    () =>
+      setShowWorks(
+        createSwitchCallback([
+          [showProjects, setShowProjects],
+          [showEducations, setShowEducations],
+          [showPrizes, setShowPrizes],
+        ]),
+      ),
+    [
+      setShowWorks,
+      showProjects,
+      setShowProjects,
+      showEducations,
+      setShowEducations,
+      showPrizes,
+      setShowPrizes,
+    ],
+  );
+
   const timelineDataHtml = data.map((timelineElement, index) => {
     if (timelineElement.dataType === "education") {
       return <EducationTimelineElement key={index} {...timelineElement} />;
@@ -88,7 +144,7 @@ function TimelineView() {
           >
             Notion Database
           </Link>
-          <br/>
+          <br />
           Other information from the CV
         </p>
       </div>

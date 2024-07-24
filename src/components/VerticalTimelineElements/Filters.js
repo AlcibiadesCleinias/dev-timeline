@@ -9,10 +9,9 @@ import {
 } from "../Constants/colors";
 import EmojiEventsIcon from "@material-ui/icons/EmojiEvents";
 import WorkIcon from "@material-ui/icons/Work";
-import { useTheme } from '@mui/material/styles';
-import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 import React from "react";
-
 
 export function FloatingFilters({
   switchProjects,
@@ -25,7 +24,7 @@ export function FloatingFilters({
   switchWorks,
 }) {
   const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.up('sm'));
+  const matches = useMediaQuery(theme.breakpoints.up("sm"));
   const filter_button_size = matches ? "large" : "small";
 
   return (
@@ -47,10 +46,10 @@ export function FloatingFilters({
         sx={{ bgcolor: showWorks ? undefined : workColor.dimmed }}
         onClick={switchWorks}
         onTouchEnd={(e) => {
-    e.preventDefault();
-    switchWorks();
-    e.target.blur();
-  }}
+          e.preventDefault();
+          switchWorks();
+          e.target.blur();
+        }}
       >
         <WorkIcon />
       </Fab>
@@ -61,10 +60,10 @@ export function FloatingFilters({
         sx={{ bgcolor: showPrizes ? undefined : prizeColor.dimmed }}
         onClick={switchPrizes}
         onTouchEnd={(e) => {
-    e.preventDefault();
-    switchPrizes();
-    e.target.blur();
-  }}
+          e.preventDefault();
+          switchPrizes();
+          e.target.blur();
+        }}
       >
         <EmojiEventsIcon />
       </Fab>
@@ -75,10 +74,10 @@ export function FloatingFilters({
         sx={{ bgcolor: showProjects ? undefined : projectColor.dimmed }}
         onClick={switchProjects}
         onTouchEnd={(e) => {
-    e.preventDefault();
-    switchProjects();
-    e.target.blur();
-  }}
+          e.preventDefault();
+          switchProjects();
+          e.target.blur();
+        }}
       >
         <DashboardIcon />
       </Fab>
@@ -89,10 +88,10 @@ export function FloatingFilters({
         sx={{ bgcolor: showEducations ? undefined : educationColor.dimmed }}
         onClick={switchEducations}
         onTouchEnd={(e) => {
-    e.preventDefault();
-    switchEducations();
-    e.target.blur();
-  }}
+          e.preventDefault();
+          switchEducations();
+          e.target.blur();
+        }}
       >
         <EducationIcon />
       </Fab>

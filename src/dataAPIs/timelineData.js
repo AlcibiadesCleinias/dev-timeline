@@ -18,7 +18,9 @@ export function timelineData() {
       title: entity.title,
       subtitle: entity.subtitle,
       description: entity.description,
-      date: end ? `${formatDateToString(start)} - ${formatDateToString(end)}` : `${formatDateToString(start)}`,
+      date: end
+        ? `${formatDateToString(start)} - ${formatDateToString(end)}`
+        : `${formatDateToString(start)}`,
       url: entity.url,
       startTimestamp: start.getTime(),
     };
