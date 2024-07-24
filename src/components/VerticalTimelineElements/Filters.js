@@ -46,6 +46,11 @@ export function FloatingFilters({
         size={filter_button_size}
         sx={{ bgcolor: showWorks ? undefined : workColor.dimmed }}
         onClick={switchWorks}
+        onTouchEnd={(e) => {
+    e.preventDefault();
+    switchWorks();
+    e.target.blur();
+  }}
       >
         <WorkIcon />
       </Fab>
@@ -55,6 +60,11 @@ export function FloatingFilters({
         size={filter_button_size}
         sx={{ bgcolor: showPrizes ? undefined : prizeColor.dimmed }}
         onClick={switchPrizes}
+        onTouchEnd={(e) => {
+    e.preventDefault();
+    switchPrizes();
+    e.target.blur();
+  }}
       >
         <EmojiEventsIcon />
       </Fab>
@@ -64,6 +74,11 @@ export function FloatingFilters({
         size={filter_button_size}
         sx={{ bgcolor: showProjects ? undefined : projectColor.dimmed }}
         onClick={switchProjects}
+        onTouchEnd={(e) => {
+    e.preventDefault();
+    switchProjects();
+    e.target.blur();
+  }}
       >
         <DashboardIcon />
       </Fab>
@@ -73,6 +88,11 @@ export function FloatingFilters({
         size={filter_button_size}
         sx={{ bgcolor: showEducations ? undefined : educationColor.dimmed }}
         onClick={switchEducations}
+        onTouchEnd={(e) => {
+    e.preventDefault();
+    switchEducations();
+    e.target.blur();
+  }}
       >
         <EducationIcon />
       </Fab>
