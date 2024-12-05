@@ -1,4 +1,4 @@
-import { Box, Fab, ThemeProvider } from "@mui/material";
+import { Box, Fab, ThemeProvider, Tooltip } from "@mui/material";
 import DashboardIcon from "@material-ui/icons/Dashboard";
 import EducationIcon from "@material-ui/icons/School";
 import {
@@ -38,63 +38,73 @@ export function FloatingFilters({
         gap: 2,
       }}
     >
-      {" "}
-      <Fab
-        color="success"
-        aria-label="Works"
-        size={filter_button_size}
-        sx={{ bgcolor: showWorks ? undefined : workColor.dimmed }}
-        onClick={switchWorks}
-        onTouchEnd={(e) => {
-          e.preventDefault();
-          switchWorks();
-          e.target.blur();
-        }}
-      >
-        <WorkIcon />
-      </Fab>
-      <Fab
-        color="warning"
-        aria-label="Prized Projects"
-        size={filter_button_size}
-        sx={{ bgcolor: showPrizes ? undefined : prizeColor.dimmed }}
-        onClick={switchPrizes}
-        onTouchEnd={(e) => {
-          e.preventDefault();
-          switchPrizes();
-          e.target.blur();
-        }}
-      >
-        <EmojiEventsIcon />
-      </Fab>
-      <Fab
-        color="info"
-        aria-label="Projects"
-        size={filter_button_size}
-        sx={{ bgcolor: showProjects ? undefined : projectColor.dimmed }}
-        onClick={switchProjects}
-        onTouchEnd={(e) => {
-          e.preventDefault();
-          switchProjects();
-          e.target.blur();
-        }}
-      >
-        <DashboardIcon />
-      </Fab>
-      <Fab
-        color="error"
-        aria-label="Education"
-        size={filter_button_size}
-        sx={{ bgcolor: showEducations ? undefined : educationColor.dimmed }}
-        onClick={switchEducations}
-        onTouchEnd={(e) => {
-          e.preventDefault();
-          switchEducations();
-          e.target.blur();
-        }}
-      >
-        <EducationIcon />
-      </Fab>
+      <Tooltip title="Work Experience" placement="left">
+        <Fab
+          color="success"
+          aria-label="Works"
+          size={filter_button_size}
+          sx={{ bgcolor: showWorks ? undefined : workColor.dimmed }}
+          onClick={switchWorks}
+          onTouchEnd={(e) => {
+            e.preventDefault();
+            switchWorks();
+            e.target.blur();
+          }}
+        >
+          <WorkIcon />
+        </Fab>
+      </Tooltip>
+
+      <Tooltip title="Awarded Projects" placement="left">
+        <Fab
+          color="warning"
+          aria-label="Prized Projects"
+          size={filter_button_size}
+          sx={{ bgcolor: showPrizes ? undefined : prizeColor.dimmed }}
+          onClick={switchPrizes}
+          onTouchEnd={(e) => {
+            e.preventDefault();
+            switchPrizes();
+            e.target.blur();
+          }}
+        >
+          <EmojiEventsIcon />
+        </Fab>
+      </Tooltip>
+
+      <Tooltip title="Projects" placement="left">
+        <Fab
+          color="info"
+          aria-label="Projects"
+          size={filter_button_size}
+          sx={{ bgcolor: showProjects ? undefined : projectColor.dimmed }}
+          onClick={switchProjects}
+          onTouchEnd={(e) => {
+            e.preventDefault();
+            switchProjects();
+            e.target.blur();
+          }}
+        >
+          <DashboardIcon />
+        </Fab>
+      </Tooltip>
+
+      <Tooltip title="Education" placement="left">
+        <Fab
+          color="error"
+          aria-label="Education"
+          size={filter_button_size}
+          sx={{ bgcolor: showEducations ? undefined : educationColor.dimmed }}
+          onClick={switchEducations}
+          onTouchEnd={(e) => {
+            e.preventDefault();
+            switchEducations();
+            e.target.blur();
+          }}
+        >
+          <EducationIcon />
+        </Fab>
+      </Tooltip>
     </Box>
   );
 }
