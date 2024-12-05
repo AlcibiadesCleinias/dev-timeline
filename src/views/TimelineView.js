@@ -20,94 +20,118 @@ function TimelineView() {
   const [showPrizes, setShowPrizes] = useState(true);
   const [showWorks, setShowWorks] = useState(true);
 
-  const createSwitchCallback = (otherStates) => {
-    return (prevShow) => {
-      if (prevShow && otherStates.every((state) => state[0])) {
-        otherStates.forEach(([_, setState]) => setState(false));
-        return true;
+  const handleFilterToggle = useCallback((
+    {targetState: targetState,
+    setTargetStateMethod: setTargetStateMethod,
+    isWorks: isWorks = false,
+    isEducation: isEducation = false,
+    isProjects: isProjects = false,
+    isPrizes: isPrizes = false}
+  ) => {
+    return () => {
+      const allActive = showProjects && showEducations && showPrizes && showWorks;
+      const allInactive = !showProjects && !showEducations && !showPrizes && !showWorks;
+
+      if (allActive) {
+        // When all active and clicking one, disable others except the clicked one
+        // For projects, keep prizes active too,
+        if (isProjects) {
+          setShowProjects(isProjects);
+          setShowPrizes(isProjects || isPrizes);
+          setShowWorks(false);
+          setShowEducations(false);
+          return;
+        }
+        
+        if (isEducation) {
+          setShowEducations(isEducation);
+          // Turn off left.
+          setShowProjects(false);
+          setShowPrizes(false);
+          setShowWorks(false);
+          return;
+        }
+
+        if (isWorks) {
+          setShowWorks(isWorks);
+          // Turn off left.
+          setShowProjects(false);
+          setShowPrizes(false);
+          setShowEducations(false);
+          return;
+        }
+
+        if (isPrizes) {
+          setShowPrizes(isPrizes);
+          // Turn off left.
+          setShowProjects(false);
+          setShowEducations(false);
+          setShowWorks(false);
+          return;
+        }
       }
-      return !prevShow;
+
+      if (allInactive) {
+        // When all inactive and clicking one, enable just that one
+        // For projects, enable prizes too.
+        setTargetStateMethod(true);
+        if (isProjects) {
+          setShowPrizes(true);
+        }
+        return;
+      }
+
+      // Can not disable prizes when projects are active.
+      if (showProjects && showPrizes && isPrizes) {
+        return;
+      }
+
+      // When enabling projects, ensure prizes are enabled.
+      if (isProjects && !targetState) {
+        // Toggle normal case.
+        setTargetStateMethod(true);
+        setShowPrizes(true);
+      } else {
+        // Toggle normal case.
+        setTargetStateMethod(!targetState);
+      }
     };
-  };
+  }, [showProjects, showEducations, showPrizes, showWorks]);
 
-  const switchProjectsCallback = React.useCallback(
-    () =>
-      setShowProjects(
-        createSwitchCallback([
-          [showEducations, setShowEducations],
-          [showPrizes, setShowPrizes],
-          [showWorks, setShowWorks],
-        ]),
-      ),
-    [
-      setShowProjects,
-      showEducations,
-      setShowEducations,
-      showPrizes,
-      setShowPrizes,
-      showWorks,
-      setShowWorks,
-    ],
+  const switchProjectsCallback = useCallback(
+    handleFilterToggle({
+      targetState: showProjects,
+      setTargetStateMethod: setShowProjects,
+      isProjects: true,
+    }),
+    [handleFilterToggle, showProjects]
   );
 
-  const switchEducationsCallback = React.useCallback(
-    () =>
-      setShowEducations(
-        createSwitchCallback([
-          [showProjects, setShowProjects],
-          [showPrizes, setShowPrizes],
-          [showWorks, setShowWorks],
-        ]),
-      ),
-    [
-      setShowEducations,
-      showProjects,
-      setShowProjects,
-      showPrizes,
-      setShowPrizes,
-      showWorks,
-      setShowWorks,
-    ],
+  const switchEducationsCallback = useCallback(
+    handleFilterToggle({
+      targetState: showEducations,
+      setTargetStateMethod: setShowEducations,
+      isEducation: true,
+    }),
+    [handleFilterToggle, showEducations]
   );
 
-  const switchPrizesCallback = React.useCallback(
-    () =>
-      setShowPrizes(
-        createSwitchCallback([
-          [showProjects, setShowProjects],
-          [showEducations, setShowEducations],
-          [showWorks, setShowWorks],
-        ]),
-      ),
-    [
-      setShowPrizes,
-      showProjects,
-      setShowProjects,
-      showEducations,
-      setShowEducations,
-      showWorks,
-      setShowWorks,
-    ],
+  const switchPrizesCallback = useCallback(
+    handleFilterToggle({
+      targetState: showPrizes,
+      setTargetStateMethod: setShowPrizes,
+      isPrizes: true,
+    }),
+    [handleFilterToggle, showPrizes]
   );
 
-  const switchWorksCallback = React.useCallback(
-    () =>
-      setShowWorks(
-        createSwitchCallback([
-          [showProjects, setShowProjects],
-          [showEducations, setShowEducations],
-          [showPrizes, setShowPrizes],
-        ]),
-      ),
-    [
-      setShowWorks,
-      showProjects,
-      setShowProjects,
-      showEducations,
-      setShowEducations,
-      showPrizes,
-      setShowPrizes,
-    ],
+  const switchWorksCallback = useCallback(
+    handleFilterToggle({
+      targetState: showWorks,
+      setTargetStateMethod: setShowWorks,
+      isWorks: true,
+    }),
+    [handleFilterToggle, showWorks]
   );
 
   const timelineDataHtml = data.map((timelineElement, index) => {
@@ -157,7 +181,7 @@ function TimelineView() {
           if (
             element.props.dataType === "project" &&
             showProjects &&
-            (!element.props.isAwarded || showPrizes)
+            (!element.props.isAwarded || showPrizes || !showPrizes)
           ) {
             return element;
           }
