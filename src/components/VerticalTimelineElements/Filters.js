@@ -1,18 +1,10 @@
 import { Box, Fab, ThemeProvider, Tooltip } from "@mui/material";
-import DashboardIcon from "@material-ui/icons/Dashboard";
-import EducationIcon from "@material-ui/icons/School";
 import {
-  educationColor,
   educationColorDimmed,
-  prizeColor,
   prizeColorDimmed,
-  projectColor,
   projectColorDimmed,
-  workColor,
   workColorDimmed,
 } from "../Constants/colors";
-import EmojiEventsIcon from "@material-ui/icons/EmojiEvents";
-import WorkIcon from "@material-ui/icons/Work";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import React from "react";
@@ -32,7 +24,8 @@ export function FloatingFilters({
   const matches = useMediaQuery(theme.breakpoints.up("sm"));
   const filter_button_size = matches ? "large" : "small";
 
-  const iconStyle = { color: '#ffffff' };
+  // check if theme is dark currently
+  const isDarkTheme = theme.palette.mode === 'dark';
 
   return (
     <Box
@@ -47,10 +40,16 @@ export function FloatingFilters({
     >
       <Tooltip title="Work Experience" placement="left">
         <Fab
-          color="success"
+          {...(isDarkTheme ? {color: "success"} : {})}
+
           aria-label="Works"
           size={filter_button_size}
-          sx={{ bgcolor: showWorks ? undefined : workColorDimmed }}
+          sx={{ 
+            bgcolor: isDarkTheme ? (showWorks ? undefined : workColorDimmed) : (showWorks ? '#2e7d32' : workColorDimmed),
+            '&:hover': {
+              bgcolor: '#2e7d32',
+            },
+          }}
           onClick={switchWorks}
           onTouchEnd={(e) => {
             e.preventDefault();
@@ -58,16 +57,22 @@ export function FloatingFilters({
             e.target.blur();
           }}
         >
-          <WorkIconComponent />
+          <WorkIconComponent/>
         </Fab>
       </Tooltip>
 
       <Tooltip title="Awarded Projects" placement="left">
         <Fab
-          color="warning"
+          {...(isDarkTheme ? {color: "warning"} : {})}
+
           aria-label="Prized Projects"
           size={filter_button_size}
-          sx={{ bgcolor: showPrizes ? undefined : prizeColorDimmed }}
+          sx={{ 
+            bgcolor: isDarkTheme ? (showPrizes ? undefined : prizeColorDimmed) : (showPrizes ? '#FFD700' : prizeColorDimmed),
+            '&:hover': {
+              bgcolor: '#FFD700',
+            },
+          }}
           onClick={switchPrizes}
           onTouchEnd={(e) => {
             e.preventDefault();
@@ -81,10 +86,16 @@ export function FloatingFilters({
 
       <Tooltip title="Projects" placement="left">
         <Fab
-          color="info"
+          {...(isDarkTheme ? {color: "info"} : {})}
+
           aria-label="Projects"
           size={filter_button_size}
-          sx={{ bgcolor: showProjects ? undefined : projectColorDimmed }}
+          sx={{ 
+            bgcolor: isDarkTheme ? (showProjects ? undefined : projectColorDimmed) : (showProjects ? '#0288d1' : projectColorDimmed),
+            '&:hover': {
+              bgcolor: '#0288d1',
+            },
+          }}
           onClick={switchProjects}
           onTouchEnd={(e) => {
             e.preventDefault();
@@ -98,10 +109,16 @@ export function FloatingFilters({
 
       <Tooltip title="Education" placement="left">
         <Fab
-          color="error"
+          {...(isDarkTheme ? {color: "error"} : {})}
+
           aria-label="Education"
           size={filter_button_size}
-          sx={{ bgcolor: showEducations ? undefined : educationColorDimmed }}
+          sx={{ 
+            bgcolor: isDarkTheme ? (showEducations ? undefined : educationColorDimmed) : (showEducations ? '#d32f2f' : educationColorDimmed),
+            '&:hover': {
+              bgcolor: '#d32f2f',
+            },
+          }}
           onClick={switchEducations}
           onTouchEnd={(e) => {
             e.preventDefault();
