@@ -24,3 +24,5 @@ yarn-error.log*
 
 .idea/
 venv/
+research/Projects.csv
+*ipynb

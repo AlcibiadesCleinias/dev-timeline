@@ -28,10 +28,14 @@ export function timelineData() {
   // Format Project data.
   const projectJsonFormatted = ProjectJson.map((projectJson) => {
     const start = new Date(Number(projectJson.start));
+    const isAwarded = projectJson.awards !== null;
+    // By design projects data do not have subtitle.
+    const subtitle = isAwarded ? projectJson.awards : null;
+
     return {
       dataType: "project",
       title: projectJson.title,
-      subtitle: projectJson.subtitle,
+      subtitle: subtitle,
       start: `${formatDateToString(start)}`,
       description: projectJson.description,
       stack: projectJson.stack,
@@ -41,7 +45,7 @@ export function timelineData() {
       publicUrl: projectJson.publicUrl,
       moreInfoUrl: projectJson.moreInfoUrl,
       startTimestamp: start.getTime(),
-      isAwarded: projectJson.awards !== null,
+      isAwarded: isAwarded,
     };
   });
 
