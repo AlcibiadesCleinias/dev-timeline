@@ -3,15 +3,20 @@ import DashboardIcon from "@material-ui/icons/Dashboard";
 import EducationIcon from "@material-ui/icons/School";
 import {
   educationColor,
+  educationColorDimmed,
   prizeColor,
+  prizeColorDimmed,
   projectColor,
+  projectColorDimmed,
   workColor,
+  workColorDimmed,
 } from "../Constants/colors";
 import EmojiEventsIcon from "@material-ui/icons/EmojiEvents";
 import WorkIcon from "@material-ui/icons/Work";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import React from "react";
+import { EducationIconComponent, PrizeIconComponent, ProjectIconComponent, WorkIconComponent } from "../Icons/icons";
 
 export function FloatingFilters({
   switchProjects,
@@ -26,6 +31,8 @@ export function FloatingFilters({
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up("sm"));
   const filter_button_size = matches ? "large" : "small";
+
+  const iconStyle = { color: '#ffffff' };
 
   return (
     <Box
@@ -43,7 +50,7 @@ export function FloatingFilters({
           color="success"
           aria-label="Works"
           size={filter_button_size}
-          sx={{ bgcolor: showWorks ? undefined : workColor.dimmed }}
+          sx={{ bgcolor: showWorks ? undefined : workColorDimmed }}
           onClick={switchWorks}
           onTouchEnd={(e) => {
             e.preventDefault();
@@ -51,7 +58,7 @@ export function FloatingFilters({
             e.target.blur();
           }}
         >
-          <WorkIcon />
+          <WorkIconComponent />
         </Fab>
       </Tooltip>
 
@@ -60,7 +67,7 @@ export function FloatingFilters({
           color="warning"
           aria-label="Prized Projects"
           size={filter_button_size}
-          sx={{ bgcolor: showPrizes ? undefined : prizeColor.dimmed }}
+          sx={{ bgcolor: showPrizes ? undefined : prizeColorDimmed }}
           onClick={switchPrizes}
           onTouchEnd={(e) => {
             e.preventDefault();
@@ -68,7 +75,7 @@ export function FloatingFilters({
             e.target.blur();
           }}
         >
-          <EmojiEventsIcon />
+          <PrizeIconComponent />
         </Fab>
       </Tooltip>
 
@@ -77,7 +84,7 @@ export function FloatingFilters({
           color="info"
           aria-label="Projects"
           size={filter_button_size}
-          sx={{ bgcolor: showProjects ? undefined : projectColor.dimmed }}
+          sx={{ bgcolor: showProjects ? undefined : projectColorDimmed }}
           onClick={switchProjects}
           onTouchEnd={(e) => {
             e.preventDefault();
@@ -85,7 +92,7 @@ export function FloatingFilters({
             e.target.blur();
           }}
         >
-          <DashboardIcon />
+          <ProjectIconComponent />
         </Fab>
       </Tooltip>
 
@@ -94,7 +101,7 @@ export function FloatingFilters({
           color="error"
           aria-label="Education"
           size={filter_button_size}
-          sx={{ bgcolor: showEducations ? undefined : educationColor.dimmed }}
+          sx={{ bgcolor: showEducations ? undefined : educationColorDimmed }}
           onClick={switchEducations}
           onTouchEnd={(e) => {
             e.preventDefault();
@@ -102,7 +109,7 @@ export function FloatingFilters({
             e.target.blur();
           }}
         >
-          <EducationIcon />
+          <EducationIconComponent />
         </Fab>
       </Tooltip>
     </Box>

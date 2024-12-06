@@ -2,13 +2,12 @@ import { VerticalTimelineElement } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 
 import { Stack } from "@mui/material";
-import DashboardIcon from "@material-ui/icons/Dashboard";
-import EmojiEventsIcon from "@material-ui/icons/EmojiEvents";
 
 import { ExternalLinkButton, StackIcons } from "./Buttons";
 import { prizeColor } from "../Constants/colors";
 import { prettifyDescription } from "./utils";
 import { useTheme } from '@mui/material/styles';
+import { PrizeIconComponent, ProjectIconComponent } from "../Icons/icons";
 
 function ProjectTimelineElement(props) {
   const {
@@ -55,7 +54,7 @@ function ProjectTimelineElement(props) {
           ? { background: prizeColor, color: "#fff" }
           : { background: theme.palette.info.main, color: "#fff" }
       }
-      icon={isAwarded ? <EmojiEventsIcon /> : <DashboardIcon />}
+      icon={isAwarded ? <PrizeIconComponent /> : <ProjectIconComponent />}
       contentStyle={{
         background: theme.palette.background.paper,
         color: theme.palette.text.primary,

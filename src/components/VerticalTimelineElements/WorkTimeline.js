@@ -5,7 +5,7 @@ import { Stack } from "@mui/material";
 import { useTheme } from '@mui/material/styles';
 
 import { ExternalLinkButton, StackIcons } from "./Buttons";
-import WorkIcon from "@material-ui/icons/Work";
+import { WorkIconComponent } from "../Icons/icons";
 
 function WorkTimelineElement(props) {
   const {
@@ -49,7 +49,7 @@ function WorkTimelineElement(props) {
       className="vertical-timeline-element--work"
       date={date}
       iconStyle={{ background: theme.palette.success.main, color: "#fff" }}
-      icon={<WorkIcon />}
+      icon={<WorkIconComponent />}
       contentStyle={{
         background: theme.palette.background.paper,
         color: theme.palette.text.primary,
