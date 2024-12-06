@@ -2,10 +2,10 @@ import { VerticalTimelineElement } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 
 import { Stack } from "@mui/material";
+import { useTheme } from '@mui/material/styles';
 
 import { ExternalLinkButton, StackIcons } from "./Buttons";
-import WorkIcon from "@material-ui/icons/Work";
-import { THEME } from "../Constants/themes";
+import { WorkIconComponent } from "../Icons/icons";
 
 function WorkTimelineElement(props) {
   const {
@@ -18,6 +18,8 @@ function WorkTimelineElement(props) {
     stack,
     additionalTags,
   } = props;
+
+  const theme = useTheme();
 
   let buttonsHtml = null;
   if (publicUrl || moreInfoUrl) {
@@ -46,16 +48,18 @@ function WorkTimelineElement(props) {
     <VerticalTimelineElement
       className="vertical-timeline-element--work"
       date={date}
-      iconStyle={{ background: THEME.palette.success.main, color: "#fff" }}
-      icon={<WorkIcon />}
+      iconStyle={{ background: theme.palette.success.main, color: "#fff" }}
+      icon={<WorkIconComponent />}
+      contentStyle={{
+        background: theme.palette.background.paper,
+        color: theme.palette.text.primary,
+      }}
     >
       {stackHtml}
       <br />
-
       <h3 className="vertical-timeline-element-title">{title}</h3>
       <h4 className="vertical-timeline-element-subtitle">{subtitle}</h4>
       <p>{formattedContent}</p>
-
       <p>
         {additionalTags.map((tag) => {
           return `#${tag} `;

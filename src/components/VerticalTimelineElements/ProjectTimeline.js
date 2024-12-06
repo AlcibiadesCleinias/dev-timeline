@@ -2,13 +2,12 @@ import { VerticalTimelineElement } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 
 import { Stack } from "@mui/material";
-import DashboardIcon from "@material-ui/icons/Dashboard";
-import EmojiEventsIcon from "@material-ui/icons/EmojiEvents";
 
 import { ExternalLinkButton, StackIcons } from "./Buttons";
 import { prizeColor } from "../Constants/colors";
 import { prettifyDescription } from "./utils";
-import { THEME } from "../Constants/themes";
+import { useTheme } from '@mui/material/styles';
+import { PrizeIconComponent, ProjectIconComponent } from "../Icons/icons";
 
 function ProjectTimelineElement(props) {
   const {
@@ -22,6 +21,8 @@ function ProjectTimelineElement(props) {
     additionalTags,
     isAwarded,
   } = props;
+
+  const theme = useTheme();
 
   let buttonsHtml = null;
   if (publicUrl || moreInfoUrl) {
@@ -50,14 +51,18 @@ function ProjectTimelineElement(props) {
       date={date}
       iconStyle={
         isAwarded
-          ? { background: prizeColor.primary, color: "#fff" }
-          : { background: THEME.palette.info.main, color: "#fff" }
+          ? { background: prizeColor, color: "#fff" }
+          : { background: theme.palette.info.main, color: "#fff" }
       }
-      icon={isAwarded ? <EmojiEventsIcon /> : <DashboardIcon />}
+      icon={isAwarded ? <PrizeIconComponent /> : <ProjectIconComponent />}
+      contentStyle={{
+        background: theme.palette.background.paper,
+        color: theme.palette.text.primary,
+        borderTop: isAwarded ? `3px solid ${prizeColor}` : `3px solid ${theme.palette.info.main}`,
+      }}
     >
       {stackHtml}
       <br />
-
       <h3 className="vertical-timeline-element-title">{title}</h3>
       <h4 className="vertical-timeline-element-subtitle">{subtitle}</h4>
       <p>{prettifyDescription(description)}</p>
