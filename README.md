@@ -14,6 +14,17 @@ Demo: https://alcibiadescleinias.github.io/dev-timeline/
 
 `pnpm run start`
 
+# Prod
+
+In [.github/workflows/deploy.yml](.github/workflows/deploy.yml) presented deploy to github pages. After the deploy you can find the site at https://alcibiadescleinias.github.io/<repo-name>/ or you could use CNAME file to set custom domain as it done in this repo: [CNAME](CNAME)
+
+To use your own experience for timeline - set up secretes: 
+- EDUCATIONS_JSON
+- PROJECTS_JSON
+- WORKS_JSON
+
+## Copy to production
+
 ## Fixtures Format
 
 ### Education
