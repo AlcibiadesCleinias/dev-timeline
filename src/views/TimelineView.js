@@ -12,6 +12,7 @@ import WorkTimelineElement from "../components/VerticalTimelineElements/WorkTime
 import VimTextBox from "../components/Vim/Vim";
 import React from "react";
 import { useTheme } from '@mui/material/styles';
+import { settings } from "../settings/settings";
 
 function TimelineView() {
   const data = timelineData();
@@ -164,7 +165,7 @@ function TimelineView() {
         <p className="text-white" style={{ textAlign: "center" }}>
           Projects fetched from{" "}
           <StyledLink
-            url="https://why-nft.notion.site/Projects-Overview-2de938bb0c4b476cb56229f620ac49e9"
+            url={settings.NOTION_DATABASE_URL}
             text="Notion Database"
           />
           <br />

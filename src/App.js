@@ -6,6 +6,7 @@ import GithubCorner from "react-github-corner";
 import { ThemeProvider as MuiThemeProvider, CssBaseline } from "@mui/material";
 import { ThemeProvider, useTheme } from './contexts/ThemeContext';
 import { Box } from '@mui/material';
+import { settings } from './settings/settings';
 
 function AppContent() {
   const { activeTheme } = useTheme();
@@ -59,7 +60,7 @@ function AppContent() {
         }}
       >
         <GithubCorner
-          href="https://github.com/alcibiadescleinias"
+          href={settings.GITHUB_REPO_URL}
           bannerColor={activeTheme.palette.background.paper}
           octoColor={activeTheme.palette.text.primary}
           size={80}
