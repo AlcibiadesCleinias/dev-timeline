@@ -5,14 +5,12 @@ import TimelineView from "./views/TimelineView";
 import GithubCorner from "react-github-corner";
 import { ThemeProvider as MuiThemeProvider, CssBaseline } from "@mui/material";
 import { ThemeProvider, useTheme } from './contexts/ThemeContext';
-import ThemeToggle from './components/ThemeToggle/ThemeToggle';
 import { Box } from '@mui/material';
 
 function AppContent() {
   const { activeTheme } = useTheme();
   
   // Set CSS variables for theme-dependent colors by injecting them into the document's style.
-  // TODO: move to separate component.
   React.useEffect(() => {
     const isDark = activeTheme.palette.mode === 'dark';
     document.documentElement.style.setProperty(
@@ -43,7 +41,7 @@ function AppContent() {
 
   return (
     <MuiThemeProvider theme={activeTheme}>
-      <CssBaseline /> {/* This normalizes styles and applies theme background */}
+      <CssBaseline />
       <Box 
         sx={{ 
           bgcolor: 'background.default',
@@ -68,9 +66,6 @@ function AppContent() {
           direction="right"
         />
         <TimelineView />
-        <Box sx={{ display: 'flex', justifyContent: 'center', my: 4 }}>
-          <ThemeToggle />
-        </Box>
       </Box>
     </MuiThemeProvider>
   );

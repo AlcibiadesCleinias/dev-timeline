@@ -2,7 +2,7 @@
 import { VerticalTimeline } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 
-import { Link } from "@mui/material";
+import StyledLink from "../components/StyledLink/StyledLink";
 import EducationTimelineElement from "../components/VerticalTimelineElements/EducationTimeline";
 import { timelineData } from "../dataAPIs/timelineData";
 import ProjectTimelineElement from "../components/VerticalTimelineElements/ProjectTimeline";
@@ -143,7 +143,7 @@ function TimelineView() {
       return (
         <ProjectTimelineElement
           key={index}
-          date={timelineElement.start}
+          date={timelineElement.date || timelineElement.start}
           {...timelineElement}
         />
       );
@@ -158,28 +158,28 @@ function TimelineView() {
       color: theme.palette.text.primary 
     }}>
       <div>
-        <h1 align={"center"} color={"primary"}>
+        <h1 style={{ textAlign: "center" }} color="primary">
           Dev Timeline
         </h1>
-        <p className="text-white" align={"center"}>
+        <p className="text-white" style={{ textAlign: "center" }}>
           Projects fetched from{" "}
-          <Link
-            onClick={() =>
-              window.open(
-                "https://why-nft.notion.site/Projects-Overview-2de938bb0c4b476cb56229f620ac49e9",
-                "_blank",
-              )
-            }
-          >
-            Notion Database
-          </Link>
+          <StyledLink
+            url="https://why-nft.notion.site/Projects-Overview-2de938bb0c4b476cb56229f620ac49e9"
+            text="Notion Database"
+          />
           <br />
           Other information from the CV
         </p>
       </div>
+      
+      {/* <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <ThemeToggle />
+      </div> */}
 
       <VerticalTimeline>
-        {timelineDataHtml.map((element, _) => {
+        {timelineDataHtml.map((element) => {
+          if (!element) return null;
+          
           if (element.props.dataType === "work" && showWorks) {
             return element;
           }
@@ -200,6 +200,7 @@ function TimelineView() {
           if (element.props.dataType === "education" && showEducations) {
             return element;
           }
+          return null;
         })}
       </VerticalTimeline>
       {!showWorks && !showProjects && !showEducations && !showPrizes ? (
