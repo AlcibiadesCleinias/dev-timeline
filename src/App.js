@@ -11,11 +11,33 @@ import { Box } from '@mui/material';
 function AppContent() {
   const { activeTheme } = useTheme();
   
-  // Set CSS variable for timeline line color based on theme
+  // Set CSS variables for theme-dependent colors by injecting them into the document's style.
+  // TODO: move to separate component.
   React.useEffect(() => {
+    const isDark = activeTheme.palette.mode === 'dark';
     document.documentElement.style.setProperty(
       '--timeline-line-color',
-      activeTheme.palette.mode === 'dark' ? '#424242' : '#ccc'
+      '#fff'
+    );
+    document.documentElement.style.setProperty(
+      '--timeline-border-color',
+      isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'
+    );
+    document.documentElement.style.setProperty(
+      '--timeline-date-color',
+      isDark ? '#fff' : '#333'
+    );
+    document.documentElement.style.setProperty(
+      '--stack-item-bg',
+      isDark ? '#2d2d2d' : '#f9f5e9'
+    );
+    document.documentElement.style.setProperty(
+      '--stack-item-color',
+      isDark ? '#fff' : '#000'
+    );
+    document.documentElement.style.setProperty(
+      '--timeline-box-shadow',
+      isDark ? 'none' : '0 3px 6px rgba(0, 0, 0, 0.16)'
     );
   }, [activeTheme]);
 

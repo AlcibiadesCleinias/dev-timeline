@@ -12,11 +12,12 @@ html, body {
     z-index: 1000;
 }
 
+/* Base timeline element styles */
 .vertical-timeline-element-content {
-    color: black;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16) !important;
 }
 
+/* Timeline element borders for different types */
 .vertical-timeline-element--project .vertical-timeline-element-content {
     border-top: 3px solid #0288d1;
 }
@@ -34,52 +35,47 @@ html, body {
 }
 
 .vertical-timeline-element-date {
-  color: #333;
+    color: var(--timeline-date-color, #333) !important;
 }
 
 /* CUSTOM LINE COLOR */
 /* The line */
-.vertical-timeline.vertical-timeline-custom-line::before {
-  background: #424242;
+.vertical-timeline::before {
+    background: var(--timeline-line-color, #ccc) !important;
 }
 
 /* Icon container's border */
 .vertical-timeline.vertical-timeline-custom-line .vertical-timeline-element--work .vertical-timeline-element-icon {
-  box-shadow: 0 0 0 4px #1976d2, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 0 4px #1976d2, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
 }
 
 .vertical-timeline.vertical-timeline-custom-line .vertical-timeline-element--education .vertical-timeline-element-icon {
-  box-shadow: 0 0 0 4px #c2185b, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 0 4px #c2185b, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
 }
 
 .stack-item-span {
-  font-size: 11px !important;
-  text-align: left !important;
-  padding: 5px 8px 5px 8px !important;
-  vertical-align: baseline;
-  background-color: #f9f5e9 !important;
-  color: black;
-  font-weight: lighter !important;
+    font-size: 11px !important;
+    text-align: left !important;
+    padding: 5px 8px 5px 8px !important;
+    vertical-align: baseline;
+    background-color: var(--stack-item-bg, #f9f5e9) !important;
+    color: var(--stack-item-color, black);
+    font-weight: lighter !important;
 }
 
 .imageIcon {
     display: flex;
     height: inherit;
     width: inherit
-  }
+}
 
 .iconRoot {
     textAlign: center
 }
 
-/* Override vertical timeline styles to use theme colors */
-.vertical-timeline::before {
-  background: var(--timeline-line-color, #ccc);
-}
-
 /* Remove default margins */
 #root {
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
 }
