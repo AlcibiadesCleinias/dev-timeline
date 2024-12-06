@@ -2,8 +2,10 @@
 
 html, body {
     overflow-x: hidden;
-    background: rgb(243, 245, 247);
     font-family: 'Play', cursive;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
 }
 
 .github-corner svg {
@@ -12,6 +14,7 @@ html, body {
 
 .vertical-timeline-element-content {
     color: black;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
 }
 
 .vertical-timeline-element--project .vertical-timeline-element-content {
@@ -67,4 +70,16 @@ html, body {
 
 .iconRoot {
     textAlign: center
+}
+
+/* Override vertical timeline styles to use theme colors */
+.vertical-timeline::before {
+  background: var(--timeline-line-color, #ccc);
+}
+
+/* Remove default margins */
+#root {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
 }

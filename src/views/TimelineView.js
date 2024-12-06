@@ -11,9 +11,11 @@ import { FloatingFilters } from "../components/VerticalTimelineElements/Filters"
 import WorkTimelineElement from "../components/VerticalTimelineElements/WorkTimeline";
 import VimTextBox from "../components/Vim/Vim";
 import React from "react";
+import { useTheme } from '@mui/material/styles';
 
 function TimelineView() {
   const data = timelineData();
+  const theme = useTheme();
 
   const [showProjects, setShowProjects] = useState(true);
   const [showEducations, setShowEducations] = useState(true);
@@ -151,7 +153,10 @@ function TimelineView() {
   });
 
   return (
-    <div>
+    <div style={{ 
+      backgroundColor: theme.palette.background.default,
+      color: theme.palette.text.primary 
+    }}>
       <div>
         <h1 align={"center"} color={"primary"}>
           Dev Timeline

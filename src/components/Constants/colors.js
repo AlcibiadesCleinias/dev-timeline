@@ -1,20 +1,12 @@
-// Kinda deprecated - use theme colors.
+import { lightTheme } from './themes';
 
-import { THEME } from "./themes";
+// Timeline background and content colors
+export const TIMELINE_BACKGROUND = lightTheme.palette.background.default;
+export const TIMELINE_CONTENT = lightTheme.palette.background.paper;
+export const TIMELINE_TEXT = lightTheme.palette.text.primary;
 
-export const educationColor = {
-  primary: THEME.palette.error.main,
-  dimmed: "rgba(211,47,47,0.64)",
-};
-export const projectColor = {
-  primary: THEME.palette.info.main,
-  dimmed: "rgb(33, 150, 243, 0.5)",
-};
-export const prizeColor = {
-  primary: "#FFD700",
-  dimmed: "rgb(255, 215, 0, 0.5)",
-};
-export const workColor = {
-  primary: THEME.palette.success.main,
-  dimmed: "rgb(67, 160, 71, 0.5)",
-};
+// Category colors
+export const workColor = '#2196f3';      // Blue
+export const prizeColor = '#ffc107';     // Amber
+export const projectColor = '#4caf50';   // Green
+export const educationColor = '#9c27b0'; // Purple
