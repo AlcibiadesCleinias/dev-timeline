@@ -24,9 +24,6 @@ export function timelineDataSorted() {
   // Format Education data.
   const educationJsonFormatted = EducationJson.map((entity) => {
     const isAwarded = entity.awards !== undefined && entity.awards !== null;
-    console.log(entity);
-    console.log(isAwarded);
-    console.log(entity.awards)
 
     return {
       ...formatCommonFields(entity),
