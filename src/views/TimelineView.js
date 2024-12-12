@@ -4,7 +4,7 @@ import "react-vertical-timeline-component/style.min.css";
 
 import StyledLink from "../components/StyledLink/StyledLink";
 import EducationTimelineElement from "../components/VerticalTimelineElements/EducationTimeline";
-import { timelineData } from "../dataAPIs/timelineData";
+import { timelineDataSorted } from "../dataAPIs/timelineData";
 import ProjectTimelineElement from "../components/VerticalTimelineElements/ProjectTimeline";
 import { useCallback, useState } from "react";
 import { FloatingFilters } from "../components/VerticalTimelineElements/Filters";
@@ -15,7 +15,7 @@ import { useTheme } from '@mui/material/styles';
 import { settings } from "../settings/settings";
 
 function TimelineView() {
-  const data = timelineData();
+  const data = timelineDataSorted();
   const theme = useTheme();
 
   const [showProjects, setShowProjects] = useState(true);
@@ -36,11 +36,10 @@ function TimelineView() {
       const allInactive = !showProjects && !showEducations && !showPrizes && !showWorks;
 
       if (allActive) {
-        // When all active and clicking one, disable others except the clicked one
-        // For projects, keep prizes active too,
+        // When all active and clicking one, disable others.
         if (isProjects) {
           setShowProjects(isProjects);
-          setShowPrizes(isProjects || isPrizes);
+          setShowPrizes(false);
           setShowWorks(false);
           setShowEducations(false);
           return;
@@ -48,7 +47,6 @@ function TimelineView() {
         
         if (isEducation) {
           setShowEducations(isEducation);
-          // Turn off left.
           setShowProjects(false);
           setShowPrizes(false);
           setShowWorks(false);
@@ -57,7 +55,6 @@ function TimelineView() {
 
         if (isWorks) {
           setShowWorks(isWorks);
-          // Turn off left.
           setShowProjects(false);
           setShowPrizes(false);
           setShowEducations(false);
@@ -66,7 +63,6 @@ function TimelineView() {
 
         if (isPrizes) {
           setShowPrizes(isPrizes);
-          // Turn off left.
           setShowProjects(false);
           setShowEducations(false);
           setShowWorks(false);
@@ -76,28 +72,11 @@ function TimelineView() {
 
       if (allInactive) {
         // When all inactive and clicking one, enable just that one
-        // For projects, enable prizes too.
         setTargetStateMethod(true);
-        if (isProjects) {
-          setShowPrizes(true);
-        }
         return;
       }
 
-      // Can not disable prizes when projects are active.
-      if (showProjects && showPrizes && isPrizes) {
-        return;
-      }
-
-      // When enabling projects, ensure prizes are enabled.
-      if (isProjects && !targetState) {
-        // Toggle normal case.
-        setTargetStateMethod(true);
-        setShowPrizes(true);
-      } else {
-        // Toggle normal case.
-        setTargetStateMethod(!targetState);
-      }
+      setTargetStateMethod(!targetState);
     };
   }, [showProjects, showEducations, showPrizes, showWorks]);
 
@@ -138,13 +117,13 @@ function TimelineView() {
   );
 
   const timelineDataHtml = data.map((timelineElement, index) => {
+    // Map serialized data to timeline elements.
     if (timelineElement.dataType === "education") {
       return <EducationTimelineElement key={index} {...timelineElement} />;
     } else if (timelineElement.dataType === "project") {
       return (
         <ProjectTimelineElement
           key={index}
-          date={timelineElement.date || timelineElement.start}
           {...timelineElement}
         />
       );
@@ -185,20 +164,15 @@ function TimelineView() {
             return element;
           }
           if (
-            element.props.dataType === "project" &&
-            showProjects &&
-            (!element.props.isAwarded || showPrizes || !showPrizes)
+            (element.props.dataType === "project" && showProjects) ||
+            (element.props.isAwarded && showPrizes)
           ) {
             return element;
           }
           if (
-            element.props.dataType === "project" &&
-            showPrizes &&
-            element.props.isAwarded
+            (element.props.dataType === "education" && showEducations) ||
+            (element.props.isAwarded && showPrizes)
           ) {
-            return element;
-          }
-          if (element.props.dataType === "education" && showEducations) {
             return element;
           }
           return null;

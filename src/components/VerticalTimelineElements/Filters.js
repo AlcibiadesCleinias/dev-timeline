@@ -24,8 +24,26 @@ export function FloatingFilters({
   const matches = useMediaQuery(theme.breakpoints.up("sm"));
   const filter_button_size = matches ? "large" : "small";
 
-  // check if theme is dark currently
+  // Check if theme is dark currently.
   const isDarkTheme = theme.palette.mode === 'dark';
+
+  // Clever labels.
+  const isAllEnabled = showWorks && showEducations && showPrizes && showProjects;
+  let workLabel = "Work Experience";
+  let prizeLabel = "Honor & Award";
+  let projectLabel = "Project";
+  let educationLabel = "Education";
+  if (isAllEnabled) {
+    workLabel = "Show " + workLabel + " only";
+    prizeLabel = "Show " + prizeLabel + " only";
+    projectLabel = "Show " + projectLabel + " only";
+    educationLabel = "Show " + educationLabel + " only";
+  } else {
+    workLabel = !showWorks ? "Show " + workLabel : "Hide " + workLabel;
+    prizeLabel = !showPrizes ? "Show " + prizeLabel : "Hide " + prizeLabel;
+    projectLabel = !showProjects ? "Show " + projectLabel : "Hide " + projectLabel;
+    educationLabel = !showEducations ? "Show " + educationLabel : "Hide " + educationLabel;
+  }
 
   return (
     <Box
@@ -38,11 +56,11 @@ export function FloatingFilters({
         gap: 2,
       }}
     >
-      <Tooltip title="Work Experience" placement="left">
+      <Tooltip title={workLabel} placement="left">
         <Fab
           {...(isDarkTheme ? {color: "success"} : {})}
 
-          aria-label="Works"
+          aria-label={workLabel}
           size={filter_button_size}
           sx={{ 
             bgcolor: isDarkTheme ? (showWorks ? undefined : workColorDimmed) : (showWorks ? '#2e7d32' : workColorDimmed),
@@ -61,11 +79,11 @@ export function FloatingFilters({
         </Fab>
       </Tooltip>
 
-      <Tooltip title="Awarded Projects" placement="left">
+      <Tooltip title={prizeLabel} placement="left">
         <Fab
           {...(isDarkTheme ? {color: "warning"} : {})}
 
-          aria-label="Prized Projects"
+          aria-label={prizeLabel}
           size={filter_button_size}
           sx={{ 
             bgcolor: isDarkTheme ? (showPrizes ? undefined : prizeColorDimmed) : (showPrizes ? '#FFD700' : prizeColorDimmed),
@@ -84,11 +102,11 @@ export function FloatingFilters({
         </Fab>
       </Tooltip>
 
-      <Tooltip title="Projects" placement="left">
+      <Tooltip title={projectLabel} placement="left">
         <Fab
           {...(isDarkTheme ? {color: "info"} : {})}
 
-          aria-label="Projects"
+          aria-label={projectLabel}
           size={filter_button_size}
           sx={{ 
             bgcolor: isDarkTheme ? (showProjects ? undefined : projectColorDimmed) : (showProjects ? '#0288d1' : projectColorDimmed),
@@ -107,11 +125,11 @@ export function FloatingFilters({
         </Fab>
       </Tooltip>
 
-      <Tooltip title="Education" placement="left">
+      <Tooltip title={educationLabel} placement="left">
         <Fab
           {...(isDarkTheme ? {color: "error"} : {})}
 
-          aria-label="Education"
+          aria-label={educationLabel}
           size={filter_button_size}
           sx={{ 
             bgcolor: isDarkTheme ? (showEducations ? undefined : educationColorDimmed) : (showEducations ? '#d32f2f' : educationColorDimmed),

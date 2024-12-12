@@ -5,7 +5,7 @@ import { Stack } from "@mui/material";
 
 import { ExternalLinkButton, StackIcons } from "./Buttons";
 import { prizeColor } from "../Constants/colors";
-import { prettifyDescription } from "./utils";
+import { prettifyDescription, prettifyWithDuration } from "./utils";
 import { useTheme } from '@mui/material/styles';
 import { PrizeIconComponent, ProjectIconComponent } from "../Icons/icons";
 
@@ -14,14 +14,16 @@ function ProjectTimelineElement(props) {
     title,
     subtitle,
     description,
-    date,
+    start,
+    end,
     publicUrl,
     moreInfoUrl,
     stack,
     additionalTags,
     isAwarded,
   } = props;
-
+  let date = prettifyWithDuration(start, end);
+  
   const theme = useTheme();
 
   let buttonsHtml = null;

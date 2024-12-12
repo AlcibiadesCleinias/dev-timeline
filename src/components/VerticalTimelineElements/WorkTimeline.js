@@ -6,18 +6,21 @@ import { useTheme } from '@mui/material/styles';
 
 import { ExternalLinkButton, StackIcons } from "./Buttons";
 import { WorkIconComponent } from "../Icons/icons";
+import { prettifyWithDuration } from "./utils";
 
 function WorkTimelineElement(props) {
   const {
     title,
     subtitle,
     description,
-    date,
+    start,
+    end,
     publicUrl,
     moreInfoUrl,
     stack,
     additionalTags,
   } = props;
+  let date = prettifyWithDuration(start, end);
 
   const theme = useTheme();
 

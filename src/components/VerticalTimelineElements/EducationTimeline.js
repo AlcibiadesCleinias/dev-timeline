@@ -3,19 +3,23 @@ import "react-vertical-timeline-component/style.min.css";
 import { useTheme } from '@mui/material/styles';
 
 import { Button } from "@mui/material";
-import { EducationIconComponent } from "../Icons/icons";
+import { EducationIconComponent, PrizeIconComponent } from "../Icons/icons";
+import { prettifyDate } from "./utils";
+import { prizeColor } from "../Constants/colors";
 
 function EducationTimelineElement(props) {
-  const { title, subtitle, description, date, url } = props;
+  const { title, subtitle, description, publicUrl, start, end, isAwarded } = props;
+  const date = prettifyDate(start, end);
   const theme = useTheme();
+
   let button;
-  if (url) {
+  if (publicUrl) {
     button = (
       <div>
         <br />
         <Button
           target="_blank"
-          href={url}
+          href={publicUrl}
           variant={"contained"}
           color={"inherit"}
         >
@@ -26,12 +30,21 @@ function EducationTimelineElement(props) {
   } else {
     button = null;
   }
+
   return (
     <VerticalTimelineElement
-      className="vertical-timeline-element--education"
+      className={
+        isAwarded
+          ? "vertical-timeline-element--prize"
+          : "vertical-timeline-element--education"
+      }
       date={date}
-      iconStyle={{ background: theme.palette.error.main, color: "#fff" }}
-      icon={<EducationIconComponent />}
+      iconStyle={
+        isAwarded
+          ? { background: prizeColor, color: "#fff" }
+          : { background: theme.palette.error.main, color: "#fff" }
+      }
+      icon={isAwarded ? <PrizeIconComponent /> : <EducationIconComponent />}
       contentStyle={{
         background: theme.palette.background.paper,
         color: theme.palette.text.primary,
