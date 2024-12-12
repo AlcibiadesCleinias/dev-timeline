@@ -29,6 +29,7 @@ export function timelineDataSorted() {
       ...formatCommonFields(entity),
       dataType: "education",
       publicUrl: entity.publicUrl ?? null,
+      moreInfoUrl: entity.moreInfoUrl ?? null,
       isAwarded,
     };
   });

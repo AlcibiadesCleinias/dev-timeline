@@ -2,33 +2,29 @@ import { VerticalTimelineElement } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import { useTheme } from '@mui/material/styles';
 
-import { Button } from "@mui/material";
 import { EducationIconComponent, PrizeIconComponent } from "../Icons/icons";
 import { prettifyDate } from "./utils";
 import { prizeColor } from "../Constants/colors";
+import { ExternalLinkButton } from "./Buttons";
+import { Stack } from "@mui/material";
 
 function EducationTimelineElement(props) {
-  const { title, subtitle, description, publicUrl, start, end, isAwarded } = props;
+  const { title, subtitle, description, publicUrl, start, end, isAwarded, moreInfoUrl } = props;
   const date = prettifyDate(start, end);
   const theme = useTheme();
 
-  let button;
-  if (publicUrl) {
-    button = (
-      <div>
-        <br />
-        <Button
-          target="_blank"
-          href={publicUrl}
-          variant={"contained"}
-          color={"inherit"}
-        >
-          Learn More
-        </Button>
-      </div>
+  let buttonsHtml;
+  if (publicUrl || moreInfoUrl) {
+    buttonsHtml = (
+      <Stack spacing={2} direction="row">
+        {publicUrl ? (
+          <ExternalLinkButton url={publicUrl}>View</ExternalLinkButton>
+        ) : null}
+        {moreInfoUrl ? (
+          <ExternalLinkButton url={moreInfoUrl}>More Info</ExternalLinkButton>
+        ) : null}
+      </Stack>
     );
-  } else {
-    button = null;
   }
 
   return (
@@ -53,7 +49,8 @@ function EducationTimelineElement(props) {
       <h3 className="vertical-timeline-element-title">{title}</h3>
       <h4 className="vertical-timeline-element-subtitle">{subtitle}</h4>
       <p>{description}</p>
-      {button}
+      <br />
+      {buttonsHtml}
     </VerticalTimelineElement>
   );
 }
