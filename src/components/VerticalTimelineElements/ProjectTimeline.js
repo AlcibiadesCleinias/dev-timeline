@@ -5,7 +5,7 @@ import { Stack } from "@mui/material";
 
 import { ExternalLinkButton, StackIcons } from "./Buttons";
 import { prizeColor } from "../Constants/colors";
-import { prettifyDescription } from "./utils";
+import { prettifyDescription, prettifyWithDuration } from "./utils";
 import { useTheme } from '@mui/material/styles';
 import { PrizeIconComponent, ProjectIconComponent } from "../Icons/icons";
 
@@ -14,13 +14,25 @@ function ProjectTimelineElement(props) {
     title,
     subtitle,
     description,
-    date,
+    start,
+    end,
     publicUrl,
     moreInfoUrl,
     stack,
     additionalTags,
     isAwarded,
   } = props;
+  let date = prettifyWithDuration(start, end);
+  let additionalTagsHtml = null;
+  if (additionalTags) {
+    additionalTagsHtml = (
+        <p>
+          {additionalTags.map((tag) => {
+            return `#${tag} `;
+          })}
+        </p>
+    )
+  }
 
   const theme = useTheme();
 
@@ -66,11 +78,7 @@ function ProjectTimelineElement(props) {
       <h3 className="vertical-timeline-element-title">{title}</h3>
       <h4 className="vertical-timeline-element-subtitle">{subtitle}</h4>
       <p>{prettifyDescription(description)}</p>
-      <p>
-        {additionalTags.map((tag) => {
-          return `#${tag} `;
-        })}
-      </p>
+      {additionalTagsHtml}
       <br />
       {buttonsHtml}
     </VerticalTimelineElement>

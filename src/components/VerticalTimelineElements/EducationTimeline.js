@@ -2,36 +2,45 @@ import { VerticalTimelineElement } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import { useTheme } from '@mui/material/styles';
 
-import { Button } from "@mui/material";
-import { EducationIconComponent } from "../Icons/icons";
+import { EducationIconComponent, PrizeIconComponent } from "../Icons/icons";
+import { prettifyDate } from "./utils";
+import { prizeColor } from "../Constants/colors";
+import { ExternalLinkButton } from "./Buttons";
+import { Stack } from "@mui/material";
 
 function EducationTimelineElement(props) {
-  const { title, subtitle, description, date, url } = props;
+  const { title, subtitle, description, publicUrl, start, end, isAwarded, moreInfoUrl } = props;
+  const date = prettifyDate(start, end);
   const theme = useTheme();
-  let button;
-  if (url) {
-    button = (
-      <div>
-        <br />
-        <Button
-          target="_blank"
-          href={url}
-          variant={"contained"}
-          color={"inherit"}
-        >
-          Learn More
-        </Button>
-      </div>
+
+  let buttonsHtml;
+  if (publicUrl || moreInfoUrl) {
+    buttonsHtml = (
+      <Stack spacing={2} direction="row">
+        {publicUrl ? (
+          <ExternalLinkButton url={publicUrl}>View</ExternalLinkButton>
+        ) : null}
+        {moreInfoUrl ? (
+          <ExternalLinkButton url={moreInfoUrl}>More Info</ExternalLinkButton>
+        ) : null}
+      </Stack>
     );
-  } else {
-    button = null;
   }
+
   return (
     <VerticalTimelineElement
-      className="vertical-timeline-element--education"
+      className={
+        isAwarded
+          ? "vertical-timeline-element--prize"
+          : "vertical-timeline-element--education"
+      }
       date={date}
-      iconStyle={{ background: theme.palette.error.main, color: "#fff" }}
-      icon={<EducationIconComponent />}
+      iconStyle={
+        isAwarded
+          ? { background: prizeColor, color: "#fff" }
+          : { background: theme.palette.error.main, color: "#fff" }
+      }
+      icon={isAwarded ? <PrizeIconComponent /> : <EducationIconComponent />}
       contentStyle={{
         background: theme.palette.background.paper,
         color: theme.palette.text.primary,
@@ -40,7 +49,8 @@ function EducationTimelineElement(props) {
       <h3 className="vertical-timeline-element-title">{title}</h3>
       <h4 className="vertical-timeline-element-subtitle">{subtitle}</h4>
       <p>{description}</p>
-      {button}
+      <br />
+      {buttonsHtml}
     </VerticalTimelineElement>
   );
 }
