@@ -43,7 +43,7 @@ export function timelineDataSorted() {
       dataType: "project",
       subtitle: isAwarded ? entity.awards : null,
       stack: entity.stack,
-      additionalTags: entity.additionalTags,
+      additionalTags: entity.additionalTags ?? null,
       publicUrl: entity.publicUrl,
       moreInfoUrl: entity.moreInfoUrl,
       isAwarded,

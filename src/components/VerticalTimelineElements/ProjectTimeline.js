@@ -23,7 +23,17 @@ function ProjectTimelineElement(props) {
     isAwarded,
   } = props;
   let date = prettifyWithDuration(start, end);
-  
+  let additionalTagsHtml = null;
+  if (additionalTags) {
+    additionalTagsHtml = (
+        <p>
+          {additionalTags.map((tag) => {
+            return `#${tag} `;
+          })}
+        </p>
+    )
+  }
+
   const theme = useTheme();
 
   let buttonsHtml = null;
@@ -68,11 +78,7 @@ function ProjectTimelineElement(props) {
       <h3 className="vertical-timeline-element-title">{title}</h3>
       <h4 className="vertical-timeline-element-subtitle">{subtitle}</h4>
       <p>{prettifyDescription(description)}</p>
-      <p>
-        {additionalTags.map((tag) => {
-          return `#${tag} `;
-        })}
-      </p>
+      {additionalTagsHtml}
       <br />
       {buttonsHtml}
     </VerticalTimelineElement>
