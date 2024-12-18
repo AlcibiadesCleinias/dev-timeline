@@ -19,9 +19,16 @@ interface StyledLinkProps {
 }
 
 const StyledLink: React.FC<StyledLinkProps> = ({ url, text, ...props }) => {
+  const handleClick = () => {
+    window.open(url, "_blank");
+  };
+
   return (
     <CustomLink
-      onClick={() => window.open(url, "_blank")}
+      onClick={handleClick}
+      data-umami-event="Styled Link Click"
+      data-umami-event-url={url}
+      data-umami-event-text={text}
       {...props}
     >
       {text}
