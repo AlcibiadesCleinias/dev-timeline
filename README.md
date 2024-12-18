@@ -8,6 +8,19 @@ Demo: https://alcibiadescleinias.github.io/dev-timeline/
 - timeline with work and projects experiences, educations and prized projects
 - filters for all 4 components are available
 
+## Environment Variables
+
+This project uses environment variables for configuration. Create either `.env` or `.env.production` file based on the provided `.env.example` template.
+
+### Required Environment Variables:
+
+- `REACT_APP_UMAMI_WEBSITE_ID`: Your Umami website ID
+
+To get started:
+1. Copy `.env.example` to `.env` for development
+2. Copy `.env.example` to `.env.production` for production
+3. Fill in the actual values in these files
+
 # Dev
 
 `pnpm i`
@@ -80,3 +93,7 @@ To use your own experience for timeline - set up secretes:
   }
 ]
 ```
+
+## Analytics
+
+This project uses [Umami](https://umami.is/) for privacy-focused website analytics. Umami is a simple, easy-to-use, self-hosted web analytics solution that respects user privacy.
