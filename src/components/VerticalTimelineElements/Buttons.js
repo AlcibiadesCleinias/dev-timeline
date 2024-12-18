@@ -3,7 +3,7 @@ import { Box, Button, styled, Tooltip } from "@mui/material";
 import { serviceNameToIcon } from "../ServiceIcons/mapping";
 
 export function ExternalLinkButton(props) {
-  const { url, children } = props;
+  const { url, children, urlMeta } = props;
   return (
     <Button
       style={{ fontFamily: "Play" }}
@@ -13,7 +13,7 @@ export function ExternalLinkButton(props) {
       color={"info"}
       data-umami-event="External Link Click"
       data-umami-event-url={url}
-      data-umami-event-name={children}
+      data-umami-event-meta={urlMeta}
     >
       {children}
     </Button>
