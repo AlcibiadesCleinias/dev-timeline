@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and represents simple 1 timeline portfolio.
 
-Demo: https://alcibiadescleinias.github.io/dev-timeline/
+Demo: https://alcibiadescleinias.github.io/dev-timeline/?source=githubReadme
 
 # Features
 - timeline with work and projects experiences, educations and prized projects
