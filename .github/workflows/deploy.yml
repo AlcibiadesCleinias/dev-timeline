@@ -35,6 +35,10 @@ jobs:
         EDUCATIONS_JSON: ${{ secrets.EDUCATIONS_JSON }}
         PROJECTS_JSON: ${{ secrets.PROJECTS_JSON }}
         WORKS_JSON: ${{ secrets.WORKS_JSON }}
+    
+    - name: Substitute Prodcution Environment Variables
+      run: |
+        echo "REACT_APP_UMAMI_WEBSITE_ID=${{ vars.REACT_APP_UMAMI_WEBSITE_ID }}" > .env.production
 
     - name: Build the project
       run: CI=false && pnpm run build
