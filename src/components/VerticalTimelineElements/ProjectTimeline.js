@@ -1,8 +1,7 @@
+import React from 'react';
 import { VerticalTimelineElement } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-
 import { Stack } from "@mui/material";
-
 import { ExternalLinkButton, StackIcons } from "./Buttons";
 import { prizeColor } from "../Constants/colors";
 import { prettifyDescription, prettifyWithDuration } from "./utils";
@@ -22,56 +21,64 @@ function ProjectTimelineElement(props) {
     additionalTags,
     isAwarded,
   } = props;
-  let date = prettifyWithDuration(start, end);
+  
+  const theme = useTheme();
+  const date = prettifyWithDuration(start, end);
+  
   let additionalTagsHtml = null;
   if (additionalTags) {
     additionalTagsHtml = (
-        <p>
-          {additionalTags.map((tag) => {
-            return `#${tag} `;
-          })}
-        </p>
-    )
+      <p>
+        {additionalTags.map((tag, index) => (
+          `#${tag} `
+        ))}
+      </p>
+    );
   }
-
-  const theme = useTheme();
 
   let buttonsHtml = null;
   if (publicUrl || moreInfoUrl) {
     buttonsHtml = (
       <Stack spacing={2} direction="row">
-        {publicUrl ? (
-          <ExternalLinkButton url={publicUrl}>View</ExternalLinkButton>
-        ) : null}
-        {moreInfoUrl ? (
-          <ExternalLinkButton url={moreInfoUrl}>More Info</ExternalLinkButton>
-        ) : null}
+        {publicUrl && (
+          <ExternalLinkButton 
+            url={publicUrl} 
+            urlMeta={`${title} - Public URL`}
+          >
+            View
+          </ExternalLinkButton>
+        )}
+        {moreInfoUrl && (
+          <ExternalLinkButton 
+            url={moreInfoUrl} 
+            urlMeta={`${title} - More Info`}
+          >
+            More Info
+          </ExternalLinkButton>
+        )}
       </Stack>
     );
   }
-  let stackHtml = null;
-  if (stack) {
-    stackHtml = <StackIcons stack={stack} />;
-  }
+
+  const stackHtml = stack ? <StackIcons stack={stack} /> : null;
+  
+  const iconStyle = isAwarded
+    ? { background: prizeColor, color: "#fff" }
+    : { background: theme.palette.info.main, color: "#fff" };
+
+  const contentStyle = {
+    background: theme.palette.background.paper,
+    color: theme.palette.text.primary,
+    borderTop: isAwarded ? `3px solid ${prizeColor}` : `3px solid ${theme.palette.info.main}`,
+  };
+
   return (
     <VerticalTimelineElement
-      className={
-        isAwarded
-          ? "vertical-timeline-element--prize"
-          : "vertical-timeline-element--project"
-      }
+      className={isAwarded ? "vertical-timeline-element--prize" : "vertical-timeline-element--project"}
       date={date}
-      iconStyle={
-        isAwarded
-          ? { background: prizeColor, color: "#fff" }
-          : { background: theme.palette.info.main, color: "#fff" }
-      }
+      iconStyle={iconStyle}
       icon={isAwarded ? <PrizeIconComponent /> : <ProjectIconComponent />}
-      contentStyle={{
-        background: theme.palette.background.paper,
-        color: theme.palette.text.primary,
-        borderTop: isAwarded ? `3px solid ${prizeColor}` : `3px solid ${theme.palette.info.main}`,
-      }}
+      contentStyle={contentStyle}
     >
       {stackHtml}
       <br />
