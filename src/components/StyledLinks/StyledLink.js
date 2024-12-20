@@ -12,13 +12,7 @@ const CustomLink = styled(Link)(({ theme }) => ({
   }
 }));
 
-interface StyledLinkProps {
-  url: string;
-  text: string;
-  [key: string]: any;
-}
-
-const StyledLink: React.FC<StyledLinkProps> = ({ url, text, ...props }) => {
+const StyledLink = ({ url, text, ...props }) => {
   const handleClick = () => {
     window.open(url, "_blank");
   };

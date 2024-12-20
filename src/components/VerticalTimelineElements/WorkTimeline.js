@@ -1,5 +1,6 @@
 import { VerticalTimelineElement } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
+import React from 'react';
 
 import { Stack } from "@mui/material";
 import { useTheme } from '@mui/material/styles';
@@ -7,6 +8,7 @@ import { useTheme } from '@mui/material/styles';
 import { ExternalLinkButton, StackIcons } from "./Buttons";
 import { WorkIconComponent } from "../Icons/icons";
 import { prettifyWithDuration } from "./utils";
+import { StyledHashTag } from "../StyledLinks/StyledHashTag";
 
 function WorkTimelineElement(props) {
   const {
@@ -47,6 +49,18 @@ function WorkTimelineElement(props) {
       <br />
     </div>
   ));
+  let additionalTagsHtml = null;
+  if (additionalTags) {
+    additionalTagsHtml = (
+      <p>
+        {additionalTags.map((tag, index) => (
+          <StyledHashTag key={index}>
+            #{tag}{' '}
+          </StyledHashTag>
+        ))}
+      </p>
+    );
+  }
   return (
     <VerticalTimelineElement
       className="vertical-timeline-element--work"
@@ -63,11 +77,7 @@ function WorkTimelineElement(props) {
       <h3 className="vertical-timeline-element-title">{title}</h3>
       <h4 className="vertical-timeline-element-subtitle">{subtitle}</h4>
       <p>{formattedContent}</p>
-      <p>
-        {additionalTags.map((tag) => {
-          return `#${tag} `;
-        })}
-      </p>
+      {additionalTagsHtml}
       <br />
       {buttonsHtml}
     </VerticalTimelineElement>
