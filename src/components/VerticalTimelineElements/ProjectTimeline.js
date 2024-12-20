@@ -7,6 +7,7 @@ import { prizeColor } from "../Constants/colors";
 import { prettifyDescription, prettifyWithDuration } from "./utils";
 import { useTheme } from '@mui/material/styles';
 import { PrizeIconComponent, ProjectIconComponent } from "../Icons/icons";
+import { StyledHashTag } from '../StyledLinks/StyledHashTag';
 
 function ProjectTimelineElement(props) {
   const {
@@ -30,7 +31,9 @@ function ProjectTimelineElement(props) {
     additionalTagsHtml = (
       <p>
         {additionalTags.map((tag, index) => (
-          `#${tag} `
+          <StyledHashTag key={index}>
+            #{tag}{' '}
+          </StyledHashTag>
         ))}
       </p>
     );

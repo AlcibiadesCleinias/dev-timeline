@@ -2,7 +2,7 @@
 import { VerticalTimeline } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 
-import StyledLink from "../components/StyledLink/StyledLink";
+import StyledLink from "../components/StyledLinks/StyledLink";
 import EducationTimelineElement from "../components/VerticalTimelineElements/EducationTimeline";
 import { timelineDataSorted } from "../dataAPIs/timelineData";
 import ProjectTimelineElement from "../components/VerticalTimelineElements/ProjectTimeline";
